@@ -23,10 +23,15 @@ const Contact = () => {
         setStatus({ type: '', message: '' });
 
         try {
-            // Assuming backend is running on port 5000
-            await axios.post('http://localhost:5000/api/contact', formData);
-            setStatus({ type: 'success', message: 'Message sent successfully! I will get back to you soon.' });
-            setFormData({ name: '', email: '', message: '' });
+            // Using backend for email handling (Docker)
+            const response = await axios.post('http://localhost:8080/api/contact', formData);
+
+            if (response.status === 200) {
+                setStatus({ type: 'success', message: 'Message sent successfully! I will get back to you soon.' });
+                setFormData({ name: '', email: '', message: '' });
+            } else {
+                throw new Error('Backend submission failed');
+            }
         } catch (error) {
             console.error('Contact error:', error);
             setStatus({ type: 'error', message: 'Failed to send message. Please try again or email me directly.' });
