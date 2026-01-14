@@ -125,6 +125,10 @@ document.addEventListener('DOMContentLoaded', () => {
     initRevealAnimations();
     initNavbarScroll();
     initMobileMenu();
+    initCustomCursor();
+    initParticleBackground();
+    initCardTilt();
+    initContactForm();
 });
 
 /* Rendering Functions */
@@ -132,7 +136,7 @@ function renderSkills() {
     const container = document.getElementById('skills-container');
     if (!container) return;
     container.innerHTML = skillCategories.map((cat, idx) => `
-        <div class="skill-card glass reveal reveal-delay-${(idx % 3) + 1}">
+        <div class="skill-card glass reveal reveal-delay-${(idx % 3) + 1}" data-tilt>
             <div class="skill-icon"><i data-lucide="${cat.icon}"></i></div>
             <h3 class="skill-card-title">${cat.title}</h3>
             <div class="skill-tags">
@@ -168,7 +172,7 @@ function renderProjects() {
     const container = document.getElementById('projects-container');
     if (!container) return;
     container.innerHTML = projects.map((proj, idx) => `
-        <div class="project-card glass reveal reveal-delay-${(idx % 3) + 1}">
+        <div class="project-card glass reveal reveal-delay-${(idx % 3) + 1}" data-tilt>
             <div class="project-icon"><i data-lucide="${proj.icon}"></i></div>
             <h3 class="project-title">${proj.title}</h3>
             <p class="project-description">${proj.description}</p>
@@ -241,7 +245,7 @@ function initNavbarScroll() {
         if (window.scrollY > 50) {
             navbar.classList.add('glass');
         } else {
-            // Keep glass if we want transparent initially, but here we always want glass for premium feel
+            // Keep glass for premium feel
         }
     });
 }
@@ -252,6 +256,191 @@ function initMobileMenu() {
     if (!toggle || !navLinks) return;
 
     toggle.addEventListener('click', () => {
-        navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        const isFlex = navLinks.style.display === 'flex';
+        navLinks.style.display = isFlex ? 'none' : 'flex';
+        navLinks.style.flexDirection = 'column';
+        navLinks.style.position = 'absolute';
+        navLinks.style.top = '100%';
+        navLinks.style.left = '0';
+        navLinks.style.width = '100%';
+        navLinks.style.background = 'var(--surface)';
+        navLinks.style.padding = '1rem';
     });
+}
+
+/* Advanced UI Features */
+function initCustomCursor() {
+    const dot = document.querySelector('.cursor-dot');
+    const outline = document.querySelector('.cursor-outline');
+    if (!dot || !outline) return;
+
+    window.addEventListener('mousemove', (e) => {
+        const posX = e.clientX;
+        const posY = e.clientY;
+
+        dot.style.left = `${posX}px`;
+        dot.style.top = `${posY}px`;
+
+        outline.animate({
+            left: `${posX}px`,
+            top: `${posY}px`
+        }, { duration: 500, fill: "forwards" });
+    });
+
+    // Hover effect on interactive elements
+    const links = document.querySelectorAll('a, button, .skill-card, .project-card');
+    links.forEach(link => {
+        link.addEventListener('mouseenter', () => {
+            outline.style.transform = 'translate(-50%, -50%) scale(1.5)';
+            outline.style.borderColor = 'var(--secondary)';
+        });
+        link.addEventListener('mouseleave', () => {
+            outline.style.transform = 'translate(-50%, -50%) scale(1)';
+            outline.style.borderColor = 'var(--primary)';
+        });
+    });
+}
+
+function initParticleBackground() {
+    const canvas = document.getElementById('particle-canvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+
+    function resize() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+
+    class Particle {
+        constructor() {
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height;
+            this.size = Math.random() * 2 + 0.5;
+            this.speedX = Math.random() * 0.5 - 0.25;
+            this.speedY = Math.random() * 0.5 - 0.25;
+            this.opacity = Math.random() * 0.5 + 0.2;
+        }
+
+        update() {
+            this.x += this.speedX;
+            this.y += this.speedY;
+
+            if (this.x > canvas.width) this.x = 0;
+            if (this.x < 0) this.x = canvas.width;
+            if (this.y > canvas.height) this.y = 0;
+            if (this.y < 0) this.y = canvas.height;
+        }
+
+        draw() {
+            ctx.fillStyle = `rgba(99, 102, 241, ${this.opacity})`;
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fill();
+        }
+    }
+
+    function init() {
+        particles = [];
+        for (let i = 0; i < 50; i++) {
+            particles.push(new Particle());
+        }
+    }
+
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles.forEach(p => {
+            p.update();
+            p.draw();
+        });
+        requestAnimationFrame(animate);
+    }
+
+    window.addEventListener('resize', () => {
+        resize();
+        init();
+    });
+    resize();
+    init();
+    animate();
+}
+
+function initCardTilt() {
+    const cards = document.querySelectorAll('[data-tilt]');
+    cards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+
+            const rotateX = (y - centerY) / 10;
+            const rotateY = (centerX - x) / 10;
+
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-5px)`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)`;
+        });
+    });
+}
+
+function initContactForm() {
+    const form = document.querySelector('.contact-form');
+    const status = document.getElementById('form-status');
+    const submitBtn = document.getElementById('submit-btn');
+    if (!form || !status || !submitBtn) return;
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData);
+
+        // Basic validation
+        if (!data.name || !data.email || !data.message) {
+            showStatus('Please fill in all fields.', 'error');
+            return;
+        }
+
+        try {
+            submitBtn.disabled = true;
+            showStatus('Sending message...', 'loading');
+
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: JSON.stringify(data),
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                showStatus('Message sent successfully! I will get back to you soon.', 'success');
+                form.reset();
+            } else {
+                const result = await response.json();
+                showStatus(result.error || 'Oops! There was a problem sending your message.', 'error');
+            }
+        } catch (error) {
+            showStatus('An error occurred. Please try again later.', 'error');
+        } finally {
+            submitBtn.disabled = false;
+        }
+    });
+
+    function showStatus(text, type) {
+        status.textContent = text;
+        status.className = `form-status ${type}`;
+
+        if (type === 'success') {
+            setTimeout(() => {
+                status.style.display = 'none';
+            }, 5000);
+        }
+    }
 }

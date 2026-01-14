@@ -20,6 +20,9 @@
 </head>
 
 <body class="dark-theme">
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
     <!-- Navigation -->
     <nav class="navbar glass">
         <div class="container nav-content">
@@ -45,6 +48,7 @@
     <!-- Hero Section -->
     <header class="hero" id="home">
         <div class="hero-bg">
+            <canvas id="particle-canvas"></canvas>
             <div class="blob blob-1"></div>
             <div class="blob blob-2"></div>
         </div>
@@ -203,7 +207,8 @@
                         <div class="form-group">
                             <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
+                        <button type="submit" id="submit-btn" class="btn btn-primary">Send Message</button>
+                        <div id="form-status" class="form-status"></div>
                     </form>
                 </div>
             </div>
