@@ -494,6 +494,36 @@ h4,
     color: var(--primary);
 }
 
+/* Certifications Section */
+.certs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.cert-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    transition: var(--transition);
+}
+
+.cert-item:hover {
+    transform: translateX(10px);
+    background: var(--border);
+}
+
+.cert-item i {
+    color: var(--primary);
+}
+
+.cert-item span {
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
 /* Contact Section */
 .contact-wrapper {
     display: grid;

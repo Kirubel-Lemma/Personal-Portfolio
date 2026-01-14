@@ -1,48 +1,61 @@
 /* Data Definitions */
 const skillCategories = [
     {
-        title: 'Programming',
+        title: 'Programming & Web',
         icon: 'code',
-        skills: ['Python', 'Java', 'JavaScript', 'Shell Script', 'YAML']
+        skills: ['Python', 'Java', 'JavaScript', 'Shell Script', 'YAML', 'NextJS', 'React', 'Node.js', 'Spring Boot']
     },
     {
-        title: 'Containerization',
-        icon: 'database',
-        skills: ['Kubernetes', 'Docker']
+        title: 'Cloud & Containerization',
+        icon: 'cloud',
+        skills: ['Docker', 'Kubernetes', 'AWS', 'Tele Cloud', 'Proxmox', 'OLVM', 'Hyper-V']
     },
     {
         title: 'CI/CD & Automation',
         icon: 'terminal',
-        skills: ['Jenkins', 'GitLab CI/CD', 'Ansible']
+        skills: ['Jenkins', 'GitHub Action', 'GitLab CI', 'Ansible', 'Terraform', 'Git']
     },
     {
-        title: 'Linux & Version Control',
+        title: 'Monitoring & Observability',
+        icon: 'activity',
+        skills: ['Zabbix', 'ELK Stack', 'Prometheus', 'Grafana', 'Signoz', 'CloudWatch']
+    },
+    {
+        title: 'Networking & Security',
         icon: 'shield-check',
-        skills: ['CentOS', 'Ubuntu', 'Git', 'GitHub', 'GitLab']
+        skills: ['OPNsense', 'pfSense', 'UniFi', 'Firewalls', 'SSO', 'VLAN', 'VoIP']
     },
     {
-        title: 'Monitoring & Networking',
-        icon: 'cloud',
-        skills: ['Prometheus', 'Grafana', 'ELK Stack', 'Zabbix']
-    },
-    {
-        title: 'Web & Proxy Servers',
-        icon: 'layout',
-        skills: ['Nginx', 'Apache', 'HAProxy', 'Traefik']
+        title: 'Databases & Servers',
+        icon: 'database',
+        skills: ['MySQL', 'PostgreSQL', 'Oracle', 'Redis', 'Apache Doris', 'Nginx', 'HAProxy', 'Traefik', 'Caddy']
     }
 ];
 
 const experiences = [
     {
-        role: 'Network and System Administrator',
-        company: 'Hagbes PLC',
-        period: 'Dec 2023 - Present',
+        role: 'System Engineer',
+        company: 'Kispay Financial Solution S.C',
+        period: 'Oct 2024 - Present',
         location: 'Addis Ababa, Ethiopia',
         description: [
-            'Architected and deployed scalable CI/CD pipelines using Jenkins for automated builds, testing, and deployments.',
-            'Configured and optimized Kubernetes clusters to ensure high availability and fault tolerance.',
-            'Designed and managed full DevOps environments; deployed Kubernetes clusters.',
-            'Implemented monitoring solutions (Prometheus, Grafana) for observability.'
+            'Architected and managed full DevOps environments using Kubernetes and Docker.',
+            'Built automated CI/CD pipelines using GitHub Action and Jenkins for finance platforms.',
+            'Implemented monitoring solutions (ELK Stack and Signoz) for deep system observability.',
+            'Managed AWS and Tele Cloud infrastructure, including complex VM migrations.',
+            'Configured secure networking with OPNsense and managed high-performance data stores like Redis and Apache Doris.'
+        ]
+    },
+    {
+        role: 'Network and System Administrator',
+        company: 'Hagbes PLC',
+        period: 'Dec 2023 - Sep 2024',
+        location: 'Addis Ababa, Ethiopia',
+        description: [
+            'Deployed and optimized Kubernetes clusters and Traefik ingress controllers.',
+            'Automated software delivery pipelines using GitHub Actions.',
+            'Managed corporate email infrastructure (Mailcow, Zimbra, Exchange) and database servers.',
+            'Enforced network security using OPNsense firewall routers and managed data center infrastructure.'
         ]
     },
     {
@@ -51,39 +64,47 @@ const experiences = [
         period: 'Jun 2022 - Dec 2023',
         location: 'Addis Ababa, Ethiopia',
         description: [
-            'Successfully implemented and configured USSD and mobile banking platforms.',
-            'Containerized applications using Docker and Kubernetes for better scalability.',
-            'Integrated ELK stack for centralized logging, alerting, and visualization.',
-            'Administered Linux-based server infrastructure ensuring 99.9% uptime.'
+            'Containerized legacy applications for improved scalability and resilience.',
+            'Integrated ELK stack for centralized logging and proactive alerting.',
+            'Administered Linux server infrastructure maintaining 99.9% uptime.',
+            'Managed network security via pfSense and performed regular security audits.'
         ]
     }
 ];
 
 const projects = [
     {
-        title: 'Hagbes ERP Infrastructure',
-        description: 'Architected a scalable CI/CD environment for an Enterprise Resource Planning system. Managed Kubernetes clusters and automated deployments for high availability.',
+        title: 'AWS Infrastructure Migration',
+        description: 'Led the "Tele Cloud to AWS" migration project. Designed lift-and-shift strategies, provisioned VPCs, and optimized costs for large-scale EC2 resource deployment.',
+        icon: 'move',
+        tags: ['AWS', 'EC2', 'VPC', 'CloudWatch', 'IAM'],
+        github: '#',
+        external: '#'
+    },
+    {
+        title: 'Odoo Enterprise Deployment',
+        description: 'Architected a scalable CI/CD environment for Odoo ERP. Optimized Docker containers for high availability and integrated automated testing stages.',
         icon: 'layers',
-        tags: ['Jenkins', 'Kubernetes', 'Traefik', 'Docker'],
+        tags: ['Odoo', 'Docker', 'GitHub Action', 'CI/CD'],
         github: '#',
         external: '#'
     },
     {
         title: 'USSD & Mobile Banking Platform',
-        description: 'Redesigned the infrastructure for a critical banking platform, improving transaction flow and system resilience. Integrated ELK for real-time monitoring.',
+        description: 'Implemented transaction-critical USSD systems. Optimized flows for high transaction volume and integrated real-time monitoring to ensure zero-downtime banking.',
         icon: 'zap',
-        tags: ['ELK Stack', 'Prometheus', 'HAProxy', 'Ansible'],
-        github: '#',
-        external: '#'
-    },
-    {
-        title: 'Secure Network Infrastructure',
-        description: 'Implemented OPNsense-based network security across multiple data centers. Enforced SSO and automated security scanning in delivery pipelines.',
-        icon: 'shield',
-        tags: ['OPNsense', 'pfSense', 'SSO', 'Zabbix'],
+        tags: ['FinTech', 'USSD', 'High-Availability', 'Monitoring'],
         github: '#',
         external: '#'
     }
+];
+
+const certifications = [
+    'Programming Fundamentals | Udacity',
+    'Android Developer Fundamentals | Udacity',
+    'Next-Gen Network Security | IT Masters',
+    'Cyber Threat Management | Cisco Networking Academy',
+    'Endpoint Security | Cisco Networking Academy'
 ];
 
 /* Main Initialization */
@@ -91,6 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderSkills();
     renderExperience();
     renderProjects();
+    renderCertifications();
     initTheme();
     initRevealAnimations();
     initNavbarScroll();
@@ -156,6 +178,18 @@ function renderProjects() {
     lucide.createIcons();
 }
 
+function renderCertifications() {
+    const container = document.getElementById('certs-container');
+    if (!container) return;
+    container.innerHTML = certifications.map(cert => `
+        <div class="cert-item glass reveal">
+            <i data-lucide="award"></i>
+            <span>${cert}</span>
+        </div>
+    `).join('');
+    lucide.createIcons();
+}
+
 /* Interactivity Functions */
 function initTheme() {
     const themeBtn = document.getElementById('theme-toggle');
@@ -211,6 +245,5 @@ function initMobileMenu() {
 
     toggle.addEventListener('click', () => {
         navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-        // Simple toggle, in production you'd use a better mobile menu overlay
     });
 }
