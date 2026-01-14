@@ -1,19 +1,19 @@
 /* Data Definitions */
 const skillCategories = [
     {
-        title: 'Programming & Web',
+        title: 'Programming & Apps',
         icon: 'code',
-        skills: ['Python', 'Java', 'JavaScript', 'Shell Script', 'YAML', 'NextJS', 'React', 'Node.js', 'Spring Boot']
+        skills: ['Python', 'Java', 'JavaScript', 'Shell Script', 'YAML', 'WildFly', 'Tomcat', 'IIS', 'Express.js', 'NextJS', 'React', 'Node.js', 'Spring Boot']
     },
     {
-        title: 'Cloud & Containerization',
+        title: 'Cloud & Virtualization',
         icon: 'cloud',
-        skills: ['Docker', 'Kubernetes', 'AWS', 'Tele Cloud', 'Proxmox', 'OLVM', 'Hyper-V']
+        skills: ['Docker', 'Kubernetes', 'AWS', 'Tele Cloud', 'Proxmox', 'OLVM', 'VirtualBox', 'Hyper-V']
     },
     {
         title: 'CI/CD & Automation',
         icon: 'terminal',
-        skills: ['Jenkins', 'GitHub Action', 'GitLab CI', 'Ansible', 'Terraform', 'Git']
+        skills: ['Jenkins', 'GitHub Action', 'GitLab CI', 'Ansible', 'Terraform', 'Git', 'GitHub', 'GitLab']
     },
     {
         title: 'Monitoring & Observability',
@@ -23,12 +23,12 @@ const skillCategories = [
     {
         title: 'Networking & Security',
         icon: 'shield-check',
-        skills: ['OPNsense', 'pfSense', 'UniFi', 'Firewalls', 'SSO', 'VLAN', 'VoIP']
+        skills: ['OPNsense', 'pfSense', 'UniFi', 'Linksys', 'Installation', 'VLAN', 'VoIP', 'Firewalls']
     },
     {
         title: 'Databases & Servers',
         icon: 'database',
-        skills: ['MySQL', 'PostgreSQL', 'Oracle', 'Redis', 'Apache Doris', 'Nginx', 'HAProxy', 'Traefik', 'Caddy']
+        skills: ['MySQL', 'PostgreSQL', 'Oracle', 'Redis', 'Apache Doris', 'Nginx', 'Apache', 'HAProxy', 'Traefik', 'Caddy', 'Zimbra', 'Mailcow', 'Microsoft Exchange']
     }
 ];
 
@@ -39,11 +39,13 @@ const experiences = [
         period: 'Oct 2024 - Present',
         location: 'Addis Ababa, Ethiopia',
         description: [
-            'Architected and managed full DevOps environments using Kubernetes and Docker.',
-            'Built automated CI/CD pipelines using GitHub Action and Jenkins for finance platforms.',
+            'Designed and managed full DevOps environments; deployed Kubernetes clusters and Docker.',
+            'Built automated CI/CD pipelines using GitHub Action and Jenkins.',
             'Implemented monitoring solutions (ELK Stack and Signoz) for deep system observability.',
             'Managed AWS and Tele Cloud infrastructure, including complex VM migrations.',
-            'Configured secure networking with OPNsense and managed high-performance data stores like Redis and Apache Doris.'
+            'Configured secure network environments using OPNsense firewall router and managed datacenter infrastructures.',
+            'Configured Redis data store for caching and Apache Doris data warehouse for data and logs.',
+            'Managed web servers (Caddy, Node.js), Nginx reverse proxy and load balancers (HAProxy).'
         ]
     },
     {
@@ -52,10 +54,14 @@ const experiences = [
         period: 'Dec 2023 - Sep 2024',
         location: 'Addis Ababa, Ethiopia',
         description: [
-            'Deployed and optimized Kubernetes clusters and Traefik ingress controllers.',
-            'Automated software delivery pipelines using GitHub Actions.',
-            'Managed corporate email infrastructure (Mailcow, Zimbra, Exchange) and database servers.',
-            'Enforced network security using OPNsense firewall routers and managed data center infrastructure.'
+            'Designed and managed full DevOps environments; deployed Kubernetes clusters.',
+            'Built automated CI/CD pipelines using GitHub Action.',
+            'Configured Traefik as an ingress controller and load balancer.',
+            'Implemented monitoring solutions (Zabbix, Prometheus, Grafana) for observability.',
+            'Installed and managed database servers (PostgreSQL, MySQL) and corporate email applications (Mailcow, Zimbra, Exchange).',
+            'Configured secure network environments using OPNsense firewall router.',
+            'Installed and deployed Odoo Server using Docker.',
+            'Managed datacenter infrastructures.'
         ]
     },
     {
@@ -64,18 +70,20 @@ const experiences = [
         period: 'Jun 2022 - Dec 2023',
         location: 'Addis Ababa, Ethiopia',
         description: [
-            'Containerized legacy applications for improved scalability and resilience.',
-            'Integrated ELK stack for centralized logging and proactive alerting.',
-            'Administered Linux server infrastructure maintaining 99.9% uptime.',
-            'Managed network security via pfSense and performed regular security audits.'
+            'Containerized applications using Docker and Kubernetes for better scalability.',
+            'Managed web servers (Nginx, Apache) and load balancers (HAProxy).',
+            'Integrated ELK stack for centralized logging, alerting, and visualization.',
+            'Administered Linux-based server infrastructure ensuring 99.9% uptime.',
+            'Deployed Zabbix and Grafana for server and application monitoring.',
+            'Managed firewall configurations using pfSense and conducted security audits.'
         ]
     }
 ];
 
 const projects = [
     {
-        title: 'AWS Infrastructure Migration',
-        description: 'Led the "Tele Cloud to AWS" migration project. Designed lift-and-shift strategies, provisioned VPCs, and optimized costs for large-scale EC2 resource deployment.',
+        title: 'Tele Cloud to AWS Migration',
+        description: 'Designed and executed on-premises virtual machine migration to AWS using lift-and-shift strategy. Provisioned and managed AWS EC2 instances, VPCs, subnets, and implemented monitoring via CloudWatch.',
         icon: 'move',
         tags: ['AWS', 'EC2', 'VPC', 'CloudWatch', 'IAM'],
         github: '#',
