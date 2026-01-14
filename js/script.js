@@ -23,7 +23,7 @@ const skillCategories = [
     {
         title: 'Networking & Security',
         icon: 'shield-check',
-        skills: ['OPNsense', 'pfSense', 'UniFi', 'Linksys', 'Installation', 'VLAN', 'VoIP', 'Firewalls']
+        skills: ['OPNsense', 'pfSense', 'UniFi', 'Linksys', 'Installation', 'VLAN', 'VoIP', 'NAT']
     },
     {
         title: 'Databases & Servers',
