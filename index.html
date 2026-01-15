@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kirubel Lemma | DevOps Engineer Portfolio</title>
+    <title>Kirubel Lemma | DevOps · System · Network Engineer Portfolio</title>
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="assets/vite.svg">
     <!-- Google Fonts -->
@@ -38,6 +38,11 @@
                         <i data-lucide="moon" id="theme-icon"></i>
                     </button>
                 </li>
+                <li>
+                    <button id="network-toggle" class="theme-btn" aria-label="Network theme">
+                        <i data-lucide="refresh-cw" id="network-icon"></i>
+                    </button>
+                </li>
             </ul>
             <div class="mobile-menu-btn" id="menu-toggle">
                 <i data-lucide="menu"></i>
@@ -63,9 +68,26 @@
                 <a href="#projects" class="btn btn-primary">View Projects</a>
                 <a href="#contact" class="btn btn-secondary">Get in Touch</a>
             </div>
+
+            <!-- Role selector and terminal preview -->
+            <div class="role-tools reveal-delay-3">
+                <div class="tools-bar">
+                    <a class="tool-btn" href="https://github.com/Kirubel-Lemma" target="_blank"><i data-lucide="github"></i>Git</a>
+                    <a class="tool-btn" href="https://linkedin.com/in/kirubel-lemma" target="_blank"><i data-lucide="linkedin"></i>LinkedIn</a>
+                </div>
+
+                <div class="terminal-card glass">
+                    <div class="terminal-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                        <div class="terminal-title">remote@kispay:~</div>
+                    </div>
+                    <pre class="ssh-snippet" id="ssh-snippet">DevOps Engineer</pre>
+                </div>
+            </div>
             <div class="scroll-indicator">
                 <div class="mouse"></div>
-                <span>Scroll Down</span>
             </div>
         </div>
     </header>

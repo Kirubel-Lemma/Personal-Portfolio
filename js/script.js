@@ -129,6 +129,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initParticleBackground();
     initCardTilt();
     initContactForm();
+    initTerminalTyping();
+    initNetworkToggle();
 });
 
 /* Rendering Functions */
@@ -179,12 +181,6 @@ function renderProjects() {
             <div class="skill-tags">
                 ${proj.tags.map(tag => `<span class="skill-tag">${tag}</span>`).join('')}
             </div>
-            <div class="project-footer">
-                <div class="project-links">
-                    <a href="${proj.github}" aria-label="GitHub"><i data-lucide="github"></i></a>
-                    <a href="${proj.external}" aria-label="Preview"><i data-lucide="external-link"></i></a>
-                </div>
-            </div>
         </div>
     `).join('');
     lucide.createIcons();
@@ -209,10 +205,17 @@ function initTheme() {
     if (!themeBtn || !themeIcon) return;
     let currentTheme = localStorage.getItem('theme') || 'dark';
 
-    document.body.className = `${currentTheme}-theme`;
+    // apply theme (supports 'dark', 'light', 'network')
+    if (currentTheme === 'network') {
+        document.body.className = 'network-theme';
+    } else {
+        document.body.className = `${currentTheme}-theme`;
+    }
     updateThemeIcon();
 
     themeBtn.addEventListener('click', () => {
+        // toggle dark <-> light, network stays separate
+        if (currentTheme === 'network') currentTheme = 'dark';
         currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
         document.body.className = `${currentTheme}-theme`;
         localStorage.setItem('theme', currentTheme);
@@ -224,6 +227,39 @@ function initTheme() {
         themeIcon.setAttribute('data-lucide', iconName);
         lucide.createIcons();
     }
+}
+
+function initNetworkToggle() {
+    const netBtn = document.getElementById('network-toggle');
+    const netIcon = document.getElementById('network-icon');
+    if (!netBtn || !netIcon) return;
+
+    let prevTheme = localStorage.getItem('theme') || 'dark';
+
+    function applyNetwork(on) {
+        if (on) {
+            // activate network theme
+            prevTheme = localStorage.getItem('theme') === 'network' ? 'dark' : localStorage.getItem('theme') || 'dark';
+            document.body.className = 'network-theme';
+            localStorage.setItem('theme', 'network');
+            netIcon.setAttribute('data-lucide', 'wifi');
+        } else {
+            // revert to previous
+            const restore = prevTheme || 'dark';
+            document.body.className = `${restore}-theme`;
+            localStorage.setItem('theme', restore);
+                netIcon.setAttribute('data-lucide', 'refresh-cw');
+        }
+        lucide.createIcons();
+    }
+
+    // initialize
+    applyNetwork(localStorage.getItem('theme') === 'network');
+
+    netBtn.addEventListener('click', () => {
+        const isNetwork = document.body.classList.contains('network-theme');
+        applyNetwork(!isNetwork);
+    });
 }
 
 function initRevealAnimations() {
@@ -443,4 +479,47 @@ function initContactForm() {
             }, 5000);
         }
     }
+}
+
+/* Role toggle: switch accent colors and filter skills */
+/* Copy SSH snippet to clipboard and UI feedback (removed - no SSH copy in UI) */
+
+/* Small typing loop for the terminal snippet to feel alive */
+function initTerminalTyping() {
+    const el = document.getElementById('ssh-snippet');
+    if (!el) return;
+
+    const phrases = ['DevOps Engineer', 'Web-Hosting Engineer', 'System Engineer', 'Network Engineer'];
+    let pIndex = 0;
+    let charIndex = 0;
+    let typing = true;
+    const typeSpeed = 40;
+    const deleteSpeed = 20;
+    const pauseAfterFull = 1000;
+
+    function tick() {
+        const current = phrases[pIndex];
+        if (typing) {
+            charIndex++;
+            el.textContent = current.slice(0, charIndex);
+            if (charIndex >= current.length) {
+                typing = false;
+                setTimeout(tick, pauseAfterFull);
+                return;
+            }
+            setTimeout(tick, typeSpeed);
+        } else {
+            charIndex--;
+            el.textContent = current.slice(0, charIndex);
+            if (charIndex <= 0) {
+                typing = true;
+                pIndex = (pIndex + 1) % phrases.length;
+                setTimeout(tick, 200);
+                return;
+            }
+            setTimeout(tick, deleteSpeed);
+        }
+    }
+
+    tick();
 }
