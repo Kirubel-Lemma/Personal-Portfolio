@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initNavbarScroll();
     initMobileMenu();
     initCardTilt();
-    initContactForm();
+    // initContactForm(); // Form removed
     initTerminalTyping();
 });
 
@@ -356,62 +356,7 @@ function initCardTilt() {
     });
 }
 
-function initContactForm() {
-    const form = document.querySelector('.contact-form');
-    const status = document.getElementById('form-status');
-    const submitBtn = document.getElementById('submit-btn');
-    if (!form || !status || !submitBtn) return;
-
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-
-        const formData = new FormData(form);
-        const data = Object.fromEntries(formData);
-
-        // Basic validation
-        if (!data.name || !data.email || !data.message) {
-            showStatus('Please fill in all fields.', 'error');
-            return;
-        }
-
-        try {
-            submitBtn.disabled = true;
-            showStatus('Sending message...', 'loading');
-
-            const response = await fetch(form.action, {
-                method: 'POST',
-                body: JSON.stringify(data),
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                }
-            });
-
-            if (response.ok) {
-                showStatus('Message sent successfully! I will get back to you soon.', 'success');
-                form.reset();
-            } else {
-                const result = await response.json();
-                showStatus(result.error || 'Oops! There was a problem sending your message.', 'error');
-            }
-        } catch (error) {
-            showStatus('An error occurred. Please try again later.', 'error');
-        } finally {
-            submitBtn.disabled = false;
-        }
-    });
-
-    function showStatus(text, type) {
-        status.textContent = text;
-        status.className = `form-status ${type}`;
-
-        if (type === 'success') {
-            setTimeout(() => {
-                status.style.display = 'none';
-            }, 5000);
-        }
-    }
-}
+// Contact form initialization removed
 
 /* Role toggle: switch accent colors and filter skills */
 /* Copy SSH snippet to clipboard and UI feedback (removed - no SSH copy in UI) */
