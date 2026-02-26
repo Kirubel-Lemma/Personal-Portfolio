@@ -1,114 +1,148 @@
 /* Data Definitions */
 const skillCategories = [
     {
-        title: 'Programming & Apps',
-        icon: 'code',
-        skills: ['Python', 'Java', 'JavaScript', 'Shell Script', 'YAML', 'WildFly', 'Tomcat', 'IIS', 'Express.js', 'NextJS', 'React', 'Node.js', 'Spring Boot']
-    },
-    {
-        title: 'Cloud & Virtualization',
-        icon: 'cloud',
-        skills: ['Docker', 'Kubernetes', 'AWS', 'Tele Cloud', 'Proxmox', 'OLVM', 'VirtualBox', 'Hyper-V']
-    },
-    {
-        title: 'CI/CD & Automation',
+        title: 'Linux',
         icon: 'terminal',
-        skills: ['Jenkins', 'GitHub Action', 'GitLab CI', 'Ansible', 'Terraform', 'Git', 'GitHub', 'GitLab']
+        skills: ['Ubuntu', 'CentOS', 'AlmaLinux']
     },
     {
-        title: 'Monitoring & Observability',
+        title: 'Automation & Infrastructure as Code',
+        icon: 'cpu',
+        skills: ['Jenkins', 'GitHub Action', 'GitLab CI', 'Terraform', 'Terragrunt', 'Ansible']
+    },
+    {
+        title: 'Virtualization & Containerization',
+        icon: 'cloud',
+        skills: ['AWS', 'Hyper-V', 'Proxmox', 'VMware', 'Docker', 'Kubernetes']
+    },
+    {
+        title: 'Version Control',
+        icon: 'git-merge',
+        skills: ['Git', 'GitHub', 'GitLab']
+    },
+    {
+        title: 'Networking',
+        icon: 'network',
+        skills: ['OPNsense', 'UniFi', 'pfSense', 'OpenVPN', 'IPsec', 'WireGuard']
+    },
+    {
+        title: 'Programming & Database',
+        icon: 'code',
+        skills: ['BASH', 'Shell Script', 'Python', 'Java', 'MySQL', 'PostgreSQL', 'MongoDB']
+    },
+    {
+        title: 'Monitoring',
         icon: 'activity',
-        skills: ['Zabbix', 'ELK Stack', 'Prometheus', 'Grafana', 'Signoz', 'CloudWatch']
+        skills: ['Zabbix', 'ELK Stack', 'SigNoz']
     },
     {
-        title: 'Networking & Security',
-        icon: 'shield-check',
-        skills: ['OPNsense', 'pfSense', 'UniFi', 'Linksys', 'Installation', 'VLAN', 'VoIP', 'NAT']
-    },
-    {
-        title: 'Databases & Servers',
-        icon: 'database',
-        skills: ['MySQL', 'PostgreSQL', 'Oracle', 'Redis', 'Apache Doris', 'Nginx', 'Apache', 'HAProxy', 'Traefik', 'Caddy', 'Zimbra', 'Mailcow', 'Microsoft Exchange']
+        title: 'Mail & Proxy Servers',
+        icon: 'mail',
+        skills: ['Zimbra', 'Mailcow', 'Nginx', 'Traefik']
     }
 ];
 
 const experiences = [
     {
-        role: 'System Engineer',
-        company: 'Kispay',
-        period: '10/2025 - Present',
+        role: 'Web-Hosting and DevOps Engineer',
+        company: 'Ashewa Technology Solution S.C',
+        period: '02/2026 - Present',
         location: 'Addis Ababa, Ethiopia',
         description: [
-            'Maintained PostgreSQL and MySQL database servers and Mailcow email systems, ensuring 99.9% uptime.',
-            'Implemented monitoring solutions (ELK Stack and Signoz) for observability.',
-            'Designed and executed virtual machine migration to AWS using lift-and-shift strategy.',
-            'Provisioned and managed AWS EC2 instances, VPCs, subnets, security groups, and Elastic IPs.',
-            'Setup IAM users, roles, and policies to enforce secure access control.',
-            'Established secure networking, including routing, DNS configuration, and connectivity testing.'
+            'Configured, maintained, and secured VPS, firewalls, and DDoS protection; managed and optimized VPN solutions for secure access.',
+            'Installed, updated, and monitored server software; implemented backup policies, disaster recovery plans, and high uptime standards.',
+            'Automated server tasks, account provisioning, and monitoring workflows; implemented CI/CD pipelines using GitHub and GitLab.',
+            'Handled domain setup, DNS configuration, registrar management, and SSL certificate setup/support.',
+            'Optimized server performance, caching strategies, and resource management; ensured security best practices and data protection compliance.',
+            'Troubleshot hosting and domain issues efficiently; provided professional customer support for hosting-related queries.',
+            'Managed and integrated control panels and billing systems (WHMCS readiness) for automated provisioning and payment follow-up.'
+        ]
+    },
+    {
+        role: 'System Engineer',
+        company: 'Kispay Financial Solution S.C',
+        period: '10/2025 - 02/2026',
+        location: 'Addis Ababa, Ethiopia',
+        description: [
+            'Maintained PostgreSQL/MySQL servers and Mailcow email systems, ensuring 99.9% uptime for corporate communications.',
+            'Designed, implemented, and maintained IPSec VPN for secure API channels with CBE, Awash Bank, M-Pesa, and Telebirr.',
+            'Configured Jenkins for scalable CI/CD pipelines; automated builds, tests, deployments, and workflows to cut manual effort and time.',
+            'Implemented HashiCorp Vault for secret management; configured secure storage, policies, dynamic secrets, and app integration for least-privilege access.',
+            'Set up SigNoz for observability; deployed metrics/traces/logs monitoring, integrated OpenTelemetry, and enabled dashboards/alerting for real-time insights.',
+            'Managed Docker containerization; built, optimized, and orchestrated containers for high availability, fault tolerance, and consistent dev/prod environments.',
+            'Handled GitHub repo management and version control; administered repos, branches, PRs, access, and CI/CD integrations for collaborative delivery.',
+            'Integrated SonarQube into Jenkins CI/CD pipelines; automated scans on builds/PRs to detect bugs, vulnerabilities, code smells, and duplication.',
+            'Set up Redis as high-performance in-memory cache; configured key-value storage to speed up responses and reduce database load.',
+            'Deployed Apache Doris as real-time MPP data warehouse; managed columnar storage and analytics for fast, sub-second queries on large logs/data.'
         ]
     },
     {
         role: 'Network and System Administrator',
-        company: 'Hagbes PLC',
+        company: 'Hagbes Pvt. Ltd. Co.',
         period: '12/2023 - 09/2025',
         location: 'Addis Ababa, Ethiopia',
         description: [
             'Designed and managed full DevOps environments; deployed Kubernetes clusters.',
-            'Implemented monitoring solutions (Zabbix, Prometheus, Grafana) for observability.',
-            'Architected and deployed scalable CI/CD pipelines using GitHub Actions.',
+            'Implemented monitoring solutions (Zabbix, ELKStack) for observability.',
+            'Architected and deployed scalable CI/CD pipelines using GitHub Actions for automated builds, testing, and deployments.',
             'Setup and optimized Docker containers to ensure high availability and fault tolerance.',
+            'Developed and documented product features, adhering to clean code principles and industry standards.',
             'Designed and implemented LAN/WAN/VLAN network infrastructure for enterprise environments.',
-            'Set up Redis data store for caching and Apache Doris data warehouse.',
-            'Managed web servers (Caddy, Node.js), Nginx reverse proxy, and load balancers (HAProxy).',
-            'Setup and managed secure network environments using OPNsense firewall.'
-        ]
-    },
-    {
-        role: 'Junior System Engineer',
-        company: 'Atlas Computer Technology Plc',
-        period: '06/2023 - 12/2023',
-        location: 'Addis Ababa, Ethiopia',
-        description: [
-            'Successfully implemented and configured USSD and mobile banking platforms.',
-            'Monitored and optimized transaction flows, resolving service issues to maintain high uptime.',
-            'Developed and maintained documentation for processes, configurations, and incident resolutions.'
+            'Setup load balancer (HAProxy) for PostgreSQL.',
+            'Setup and managed secure network environments using OPNsense firewall and oversaw data center infrastructure spanning servers.'
         ]
     }
 ];
 
 const projects = [
     {
-        title: 'Tele Cloud to AWS Migration',
-        description: 'Designed and executed on-premises virtual machine migration to AWS using lift-and-shift strategy. Provisioned and managed AWS EC2 instances, VPCs, subnets, and implemented monitoring via CloudWatch.',
-        icon: 'cloud',
-        tags: ['AWS', 'EC2', 'Cost Optimization', 'Migration'],
+        title: 'Secure Banking API Integration via IPSec VPN',
+        description: 'Designed and implemented secure IPSec VPN tunnels to enable encrypted API communication with financial institutions. Configured firewall policies, NAT rules, and routing to ensure secure and stable connectivity.',
+        features: [
+            'Performed connectivity testing, packet analysis, and troubleshooting to maintain high availability.',
+            'Documented VPN configurations, network diagrams, and integration procedures for operational continuity.'
+        ],
+        icon: 'shield',
+        tags: ['IPSec', 'OPNsense', 'Security', 'VPN', 'Firewall'],
         github: '#',
         external: '#'
     },
     {
         title: 'Odoo Server Setup and Deployment',
-        description: 'Architected and deployed scalable CI/CD pipelines using GitHub Action for automated builds, testing, and deployments. Configured and optimized docker containers.',
+        description: 'Architected and deployed scalable CI/CD pipelines using GitHub Action for automated builds, testing, and deployments. Configured and optimized docker containers to ensure high availability and fault tolerance.',
+        features: [
+            'Collaborated with development teams to enhance delivery efficiency and maintain robust quality standards.',
+            'Developed and documented product features, adhering to clean code principles and industry standards.'
+        ],
         icon: 'layers',
         tags: ['Odoo', 'Docker', 'GitHub Actions', 'CI/CD'],
         github: '#',
         external: '#'
     },
     {
-        title: 'Network & VoIP Service Installation',
-        description: 'Designed and implemented LAN/WAN/VLAN network infrastructure. Configured routers, switches, firewalls, and installed VoIP systems including IP phones and SIP trunks.',
+        title: 'Network, CCTV, and VoIP Service Installation',
+        description: 'Designed and implemented LAN/WAN/VLAN network infrastructure for enterprise environments. Configured routers, switches, and firewalls to ensure secure and reliable connectivity.',
+        features: [
+            'Installed and managed VoIP systems, including IP phones, SIP trunks, and call routing.',
+            'Configured PBX systems for voice services.',
+            'Documented network topology, IP addressing schemes, and VoIP configurations.'
+        ],
         icon: 'network',
-        tags: ['Networking', 'VoIP', 'VLAN', 'Security'],
+        tags: ['Networking', 'VoIP', 'VLAN', 'PBX', 'CCTV'],
         github: '#',
         external: '#'
     }
 ];
 
 const certifications = [
-    'Programming Fundamentals | Udacity',
-    'Android Developer Fundamentals | Udacity',
-    'Next-Gen Network Security | IT Masters',
+    'Programming Fundamentals | UDACITY',
+    'Amazon EC2 Observability, Monitoring, and Troubleshooting | AWS Skill Builder',
+    'Amazon Elastic Kubernetes Service (EKS) | AWS Skill Builder',
+    'Deploying Applications with AWS Elastic Beanstalk | AWS Skill Builder',
+    'Advanced Testing Practices Using AWS DevOps Tools | AWS Skill Builder',
     'Cyber Threat Management | Cisco Networking Academy',
-    'Endpoint Security | Cisco Networking Academy'
+    'Endpoint Security | Cisco Networking Academy',
+    'Operating Systems Basics | Cisco Networking Academy'
 ];
 
 /* Main Initialization */
@@ -117,7 +151,6 @@ document.addEventListener('DOMContentLoaded', () => {
     renderExperience();
     renderProjects();
     renderCertifications();
-    initTheme();
     initRevealAnimations();
     initNavbarScroll();
     initMobileMenu();
@@ -147,8 +180,8 @@ function renderExperience() {
     if (!container) return;
     container.innerHTML = experiences.map(exp => `
         <div class="timeline-item reveal">
-            <div class="timeline-dot glass"><i data-lucide="briefcase"></i></div>
-            <div class="timeline-content glass">
+            <div class="timeline-dot"><i data-lucide="briefcase"></i></div>
+            <div class="timeline-content">
                 <h3 class="exp-role">${exp.role}</h3>
                 <div class="exp-meta">
                     <span><i data-lucide="building-2"></i> ${exp.company}</span>
@@ -167,10 +200,19 @@ function renderProjects() {
     const container = document.getElementById('projects-container');
     if (!container) return;
     container.innerHTML = projects.map((proj, idx) => `
-        <div class="project-card glass reveal reveal-delay-${(idx % 3) + 1}" data-tilt>
-            <div class="project-icon"><i data-lucide="${proj.icon}"></i></div>
-            <h3 class="project-title">${proj.title}</h3>
-            <p class="project-description">${proj.description}</p>
+        <div class="project-card reveal reveal-delay-${(idx % 3) + 1}" data-tilt>
+            <h3 class="project-title" style="margin-bottom: 0.5rem; font-size: 1.25rem; display: flex; align-items: center; gap: 0.5rem;">
+                <i data-lucide="${proj.icon}" style="color: var(--primary);"></i>
+                ${proj.title}
+            </h3>
+            <p class="project-description" style="color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.6;">${proj.description}</p>
+            
+            <h4 style="color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1rem;">Key Features</h4>
+            <ul style="color: var(--text-secondary); padding-left: 1.25rem; margin-bottom: 1.5rem; flex-grow: 1; font-size: 0.95rem; line-height: 1.6;">
+                ${proj.features.map(f => `<li style="margin-bottom: 0.25rem;">${f}</li>`).join('')}
+            </ul>
+
+            <h4 style="color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1rem;">Technologies Used</h4>
             <div class="skill-tags">
                 ${proj.tags.map(tag => `<span class="skill-tag">${tag}</span>`).join('')}
             </div>
@@ -192,36 +234,6 @@ function renderCertifications() {
 }
 
 /* Interactivity Functions */
-function initTheme() {
-    const themeBtn = document.getElementById('theme-toggle');
-    const themeIcon = document.getElementById('theme-icon');
-    if (!themeBtn || !themeIcon) return;
-    let currentTheme = localStorage.getItem('theme') || 'dark';
-
-    // apply theme (supports 'dark', 'light', 'network')
-    if (currentTheme === 'network') {
-        document.body.className = 'network-theme';
-    } else {
-        document.body.className = `${currentTheme}-theme`;
-    }
-    updateThemeIcon();
-
-    themeBtn.addEventListener('click', () => {
-        // toggle dark <-> light, network stays separate
-        if (currentTheme === 'network') currentTheme = 'dark';
-        currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        document.body.className = `${currentTheme}-theme`;
-        localStorage.setItem('theme', currentTheme);
-        updateThemeIcon();
-    });
-
-    function updateThemeIcon() {
-        const iconName = currentTheme === 'dark' ? 'sun' : 'moon';
-        themeIcon.setAttribute('data-lucide', iconName);
-        lucide.createIcons();
-    }
-}
-
 
 
 function initRevealAnimations() {
@@ -366,7 +378,7 @@ function initTerminalTyping() {
     const el = document.getElementById('ssh-snippet');
     if (!el) return;
 
-    const phrases = ['DevOps Engineer', 'Web-Hosting Engineer', 'System Engineer', 'Network Engineer'];
+    const phrases = ['DevOps Engineer', 'Web-Hosting Engineer', 'Network System Operations'];
     let pIndex = 0;
     let charIndex = 0;
     let typing = true;

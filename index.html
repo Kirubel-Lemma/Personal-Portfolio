@@ -22,21 +22,16 @@
 <body class="dark-theme">
 
     <!-- Navigation -->
-    <nav class="navbar glass">
+    <nav class="navbar glass" id="navbar">
         <div class="container nav-content">
-            <a href="#" class="logo">KL<span>.</span></a>
+            <a href="#home" class="logo">Kirubel <span class="text-gradient">Lemma</span></a>
             <ul class="nav-links">
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#skills" class="nav-link">Skills</a></li>
                 <li><a href="#experience" class="nav-link">Experience</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-                <li>
-                    <button id="theme-toggle" class="theme-btn" aria-label="Toggle theme">
-                        <i data-lucide="moon" id="theme-icon"></i>
-                    </button>
-                </li>
-
+                <li><a href="#contact" class="nav-link btn btn-primary"
+                        style="color: white; padding: 0.5rem 1rem; border-radius: 999px;">Contact</a></li>
             </ul>
             <div class="mobile-menu-btn" id="menu-toggle">
                 <i data-lucide="menu"></i>
@@ -51,31 +46,32 @@
             <div class="blob blob-1"></div>
             <div class="blob blob-2"></div>
         </div>
-        <div class="container hero-content" style="padding-top: 80px;">
+        <div class="container hero-content">
+            <div class="status-badge reveal">
+                <div class="status-dot"></div>
+                Open to Remote Opportunities
+            </div>
             <h1 class="reveal">Hello, I'm <span class="text-gradient">Kirubel Lemma</span></h1>
-            <h2 class="reveal-delay-1">DevOps Engineer & Infrastructure Architect</h2>
-            <p class="reveal-delay-2">DevOps Engineer specializing in Linux system administration, Kubernetes
-                orchestration, CI/CD automation, cloud migration, and infrastructure security. Designed scalable, highly
-                available systems achieving 99.9% uptime.
+            <h2 class="reveal-delay-1" style="font-size: 1.5rem; margin-top: 0.5rem; color: var(--text-secondary);">
+                DevOps Engineer & Cloud Architect</h2>
+            <p class="reveal-delay-2">Passionate about automating infrastructure, optimizing CI/CD pipelines, and
+                building scalable cloud solutions.
+                I specialize in AWS, Kubernetes, Docker, and modern DevOps practices to help teams deliver faster and
+                more reliably.
             </p>
-            <div class="hero-btns reveal-delay-3">
-                <a href="assets/Kirubel_Lemma_CV.pdf" class="btn btn-primary" download>Download CV</a>
-                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=kirubellemma13@gmail.com" target="_blank"
-                    class="btn btn-secondary">Get in Touch</a>
+            <div class="hero-btns reveal-delay-3" style="display: flex; gap: 1rem; align-items: center;">
+                <a href="#contact" class="btn btn-primary" style="display: flex; align-items: center; gap: 0.5rem;">
+                    <i data-lucide="mail"></i> Get In Touch
+                </a>
+                <a href="assets/Kirubel_Lemma_CV.pdf" class="btn btn-secondary"
+                    style="display: flex; align-items: center; gap: 0.5rem;" download>
+                    <i data-lucide="download"></i> Download CV
+                </a>
             </div>
 
             <!-- Role selector and terminal preview -->
-            <div class="role-tools reveal-delay-3">
-                <div class="tools-bar">
-                    <a class="tool-btn" href="https://github.com/Kirubel-Lemma" target="_blank"><i
-                            data-lucide="github"></i>Git</a>
-                    <a class="tool-btn" href="https://linkedin.com/in/kirubel-lemma" target="_blank"><i
-                            data-lucide="linkedin"></i>LinkedIn</a>
-                    <a class="tool-btn" href="https://wa.me/251989470777" target="_blank"><i
-                            data-lucide="message-circle"></i>WhatsApp</a>
-                </div>
-
-                <div class="terminal-card glass">
+            <div class="role-tools reveal-delay-3" style="margin-top: 2.5rem;">
+                <div class="terminal-card glass" style="margin-right: auto; margin-left: 0;">
                     <div class="terminal-header">
                         <span class="dot red"></span>
                         <span class="dot yellow"></span>
@@ -85,7 +81,8 @@
                     <pre class="ssh-snippet" id="ssh-snippet">DevOps Engineer</pre>
                 </div>
             </div>
-            <div class="scroll-indicator">
+
+            <div class="scroll-indicator" style="margin-top: 4rem;">
                 <div class="mouse"></div>
             </div>
         </div>
@@ -95,35 +92,23 @@
         <!-- About Section -->
         <section id="about" class="section section-padding">
             <div class="container">
-                <div class="section-header reveal">
-                    <h2 class="section-title">About <span class="text-gradient">Me</span></h2>
-                    <div class="underline"></div>
-                </div>
-                <div class="about-grid">
-                    <div class="about-text reveal">
-                        <p>I am a DevOps Engineer with 3+ years of experience optimizing software delivery pipelines,
-                            infrastructure automation, and containerization. Specialized in Linux system administration,
-                            Kubernetes orchestration, CI/CD automation, cloud migration, and infrastructure security. I
-                            design scalable, highly available systems achieving 99.9% uptime, and I am skilled in GitOps
-                            workflows and observability solutions.</p>
-                        <p>With a Bachelor's Degree in Computer Science from Admas University (GPA 3.94), I bridge the
-                            gap between software development and stable infrastructure operations. I am committed to
-                            delivering efficient, secure, and reliable infrastructure. I am a native Amharic speaker and
-                            proficient in English.</p>
-                        <div class="about-stats">
-                            <div class="stat-item">
-                                <h3>3+</h3>
-                                <p>Years Exp.</p>
-                            </div>
-                            <div class="stat-item">
-                                <h3>10+</h3>
-                                <p>Cloud VM Management</p>
-                            </div>
-                            <div class="stat-item">
-                                <h3>15+</h3>
-                                <p>Tools Mastered</p>
-                            </div>
-                        </div>
+                <div class="about-grid" style="display: block; max-width: 1000px; margin: 0 auto;">
+                    <div class="glass" style="padding: 2.5rem; text-align: left;">
+                        <h2 class="section-title" style="font-size: 2rem; margin-bottom: 1.5rem; text-align: left;">
+                            Professional Summary</h2>
+                        <p style="color: var(--text-secondary); line-height: 1.8; font-size: 1.1rem;">
+                            Mid-level DevOps Engineer with a strong foundation in building, automating, and securing
+                            scalable infrastructures across cloud and on-premise platforms. Experienced in
+                            containerization
+                            and orchestration with Docker and Kubernetes; infrastructure automation with Terraform,
+                            Terragrunt, and Ansible; CI/CD pipelines using GitHub Actions, Jenkins and GitLab CI;
+                            network
+                            architecture and secure access with Nginx, Traefik, Haproxy, and OPNsense; and
+                            monitoring/logging with Zabbix, Prometheus, and the ELK stack. Committed to delivering
+                            robust
+                            solutions that enhance performance, security, and deployment agility in dynamic
+                            environments.
+                        </p>
                     </div>
                 </div>
             </div>
