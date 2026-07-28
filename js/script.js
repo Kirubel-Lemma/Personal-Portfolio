@@ -8,12 +8,12 @@ const skillCategories = [
     {
         title: 'Automation & Infrastructure as Code',
         icon: 'cpu',
-        skills: ['Jenkins', 'GitHub Action', 'GitLab CI', 'Terraform', 'Terragrunt', 'Ansible']
+        skills: ['Jenkins', 'GitHub Actions', 'GitLab CI', 'Terraform', 'Terragrunt', 'Ansible', 'GitOps (Flux CD)']
     },
     {
-        title: 'Virtualization & Containerization',
+        title: 'Container Orchestration & Virtualization',
         icon: 'cloud',
-        skills: ['AWS', 'Hyper-V', 'Proxmox', 'VMware', 'Docker', 'Kubernetes']
+        skills: ['Kubernetes', 'Docker', 'Harbor', 'AWS', 'Hyper-V', 'Proxmox', 'VMware']
     },
     {
         title: 'Version Control',
@@ -26,23 +26,40 @@ const skillCategories = [
         skills: ['OPNsense', 'UniFi', 'pfSense', 'OpenVPN', 'IPsec', 'WireGuard']
     },
     {
-        title: 'Programming & Database',
-        icon: 'code',
-        skills: ['BASH', 'Shell Script', 'Python', 'Java', 'MySQL', 'PostgreSQL', 'MongoDB']
-    },
-    {
-        title: 'Monitoring',
+        title: 'Observability & Monitoring',
         icon: 'activity',
-        skills: ['Zabbix', 'ELK Stack', 'SigNoz']
+        skills: ['Grafana', 'Prometheus', 'Grafana Tempo', 'OpenTelemetry', 'VictoriaMetrics', 'VictoriaLogs', 'ELK Stack', 'Zabbix', 'SigNoz']
     },
     {
-        title: 'Mail & Proxy Servers',
+        title: 'Programming & Databases',
+        icon: 'code',
+        skills: ['BASH', 'Shell Script', 'Python', 'Java', 'MySQL', 'PostgreSQL', 'MongoDB', 'Redis', 'Apache Doris']
+    },
+    {
+        title: 'Secrets & Security Tooling',
+        icon: 'shield',
+        skills: ['HashiCorp Vault', 'SonarQube', 'IAM', 'SSL/TLS', 'DDoS Protection']
+    },
+    {
+        title: 'Proxy, Load Balancing & Mail',
         icon: 'mail',
-        skills: ['Zimbra', 'Mailcow', 'Nginx', 'Traefik']
+        skills: ['Nginx', 'Traefik', 'HAProxy', 'Mailcow', 'Zimbra']
     }
 ];
 
 const experiences = [
+    {
+        role: 'DevOps Engineer',
+        company: 'Safaricom Telecommunications Ethiopia PLC',
+        period: '03/2026 - Present',
+        location: 'Addis Ababa, Ethiopia',
+        description: [
+            'Architected and deployed VictoriaLogs, VictoriaMetrics, and Grafana Tempo to modernize observability infrastructure during migration from Splunk Enterprise to the Grafana stack.',
+            'Managed OpenTelemetry Collector and Gateway deployments across 52 Kubernetes clusters, standardizing telemetry pipelines for logs, metrics, and distributed tracing.',
+            'Implemented GitOps and CI/CD workflows using Flux CD and GitLab to automate Kubernetes deployments, Helm chart delivery, and infrastructure reconciliation.',
+            'Administered Harbor private registry with vulnerability scanning, image signing, and RBAC enforcement to strengthen container security and compliance.'
+        ]
+    },
     {
         role: 'Web-Hosting and DevOps Engineer',
         company: 'Ashewa Technology Solution S.C',
@@ -96,6 +113,20 @@ const experiences = [
 
 const projects = [
     {
+        title: 'Splunk Sunset: Enterprise Observability Migration',
+        description: 'Architected and deployed VictoriaLogs and VictoriaMetrics as scalable, high-performance observability platforms, modernizing logging and metrics infrastructure during an enterprise migration from Splunk Enterprise to the Grafana ecosystem across 52 Kubernetes clusters.',
+        features: [
+            'Designed distributed tracing with Grafana Tempo integrated with OpenTelemetry Collector and Gateway for end-to-end trace visibility across microservices and Kubernetes workloads.',
+            'Standardized telemetry pipelines for metrics, logs, and traces with centralized routing, filtering, enrichment, and forwarding strategies.',
+            'Implemented GitOps-based continuous delivery with Flux CD to automate Kubernetes resource reconciliation across multi-cluster environments.',
+            'Administered Harbor private container registry, enforcing vulnerability scanning, image signing, retention policies, and RBAC.'
+        ],
+        icon: 'activity',
+        tags: ['VictoriaMetrics', 'VictoriaLogs', 'Grafana Tempo', 'OpenTelemetry', 'Kubernetes', 'Flux CD', 'Harbor'],
+        github: '#',
+        external: '#'
+    },
+    {
         title: 'Secure Banking API Integration via IPSec VPN',
         description: 'Designed and implemented secure IPSec VPN tunnels to enable encrypted API communication with financial institutions. Configured firewall policies, NAT rules, and routing to ensure secure and stable connectivity.',
         features: [
@@ -135,14 +166,117 @@ const projects = [
 ];
 
 const certifications = [
-    'Programming Fundamentals | UDACITY',
-    'Amazon EC2 Observability, Monitoring, and Troubleshooting | AWS Skill Builder',
-    'Amazon Elastic Kubernetes Service (EKS) | AWS Skill Builder',
-    'Deploying Applications with AWS Elastic Beanstalk | AWS Skill Builder',
-    'Advanced Testing Practices Using AWS DevOps Tools | AWS Skill Builder',
-    'Cyber Threat Management | Cisco Networking Academy',
-    'Endpoint Security | Cisco Networking Academy',
-    'Operating Systems Basics | Cisco Networking Academy'
+    {
+        group: 'Amazon Web Services',
+        icon: 'cloud',
+        items: [
+            {
+                title: 'Getting Started with DevOps on AWS',
+                issuer: 'AWS Training & Certification',
+                date: 'Feb 2026',
+                file: 'assets/certs/aws-devops-getting-started.pdf'
+            },
+            {
+                title: 'AWS Command Line Interface (CLI) Basics',
+                issuer: 'AWS Training & Certification',
+                date: 'Feb 2026',
+                file: 'assets/certs/aws-cli-basics.pdf'
+            },
+            {
+                title: 'AWS Cloud Practitioner Essentials',
+                issuer: 'Coursera (AWS-authorized)',
+                date: 'Sep 2025',
+                verify: 'https://coursera.org/verify/Q6PCQ5MLVYPC',
+                file: 'assets/certs/aws-cloud-practitioner-essentials.pdf'
+            },
+            {
+                title: 'Amazon EC2 Observability, Monitoring, and Troubleshooting',
+                issuer: 'AWS Skill Builder',
+                file: 'assets/certs/aws-ec2-observability.pdf'
+            },
+            {
+                title: 'Amazon Elastic Kubernetes Service (EKS)',
+                issuer: 'AWS Skill Builder',
+                file: 'assets/certs/aws-eks.pdf'
+            },
+            {
+                title: 'Deploying Applications with AWS Elastic Beanstalk',
+                issuer: 'AWS Skill Builder',
+                file: 'assets/certs/aws-elastic-beanstalk.pdf'
+            },
+            {
+                title: 'Advanced Testing Practices Using AWS DevOps Tools',
+                issuer: 'AWS Skill Builder',
+                file: 'assets/certs/aws-devops-testing.pdf'
+            }
+        ]
+    },
+    {
+        group: 'cPanel University',
+        icon: 'server',
+        items: [
+            {
+                title: 'cPanel Professional Certification',
+                issuer: 'cPanel University',
+                date: 'Mar 2026',
+                credentialId: '691ac370-7d32-4b97-b24f-fd4be5158eb7',
+                file: 'assets/certs/cpanel-professional.pdf'
+            },
+            {
+                title: 'cPanel & WHM System Administrator II',
+                issuer: 'cPanel University',
+                date: 'Mar 2026',
+                credentialId: '4cfb73be-8508-4c25-8448-77b7e06e1c33',
+                file: 'assets/certs/cpanel-whm-sysadmin-2.pdf'
+            },
+            {
+                title: 'cPanel Certified Partner Accreditation',
+                issuer: 'cPanel University',
+                date: 'Mar 2026',
+                credentialId: '967c7912-1211-4ecd-bcd5-432e515b179d',
+                file: 'assets/certs/cpanel-certified-partner.pdf'
+            },
+            {
+                title: 'cPanel & WHM System Administrator I',
+                issuer: 'cPanel University',
+                date: 'Mar 2026',
+                credentialId: '8f3b140c-cac3-4d7c-bfdd-acd1b5fb32b8',
+                file: 'assets/certs/cpanel-whm-sysadmin-1.pdf'
+            }
+        ]
+    },
+    {
+        group: 'Cisco Networking Academy',
+        icon: 'shield',
+        items: [
+            {
+                title: 'Cyber Threat Management',
+                issuer: 'Cisco Networking Academy',
+                file: 'assets/certs/cisco-cyber-threat-management.pdf'
+            },
+            {
+                title: 'Endpoint Security',
+                issuer: 'Cisco Networking Academy',
+                file: 'assets/certs/cisco-endpoint-security.pdf'
+            },
+            {
+                title: 'Operating Systems Basics',
+                issuer: 'Cisco Networking Academy',
+                file: 'assets/certs/cisco-operating-systems-basics.pdf'
+            }
+        ]
+    },
+    {
+        group: 'Other',
+        icon: 'award',
+        items: [
+            {
+                title: 'Programming Fundamentals',
+                issuer: 'Udacity',
+                file: 'assets/certs/udacity-programming-fundamentals.pdf'
+            }
+        ]
+    }
 ];
 
 /* Main Initialization */
@@ -224,10 +358,28 @@ function renderProjects() {
 function renderCertifications() {
     const container = document.getElementById('certs-container');
     if (!container) return;
-    container.innerHTML = certifications.map(cert => `
-        <div class="cert-item glass reveal">
-            <i data-lucide="award"></i>
-            <span>${cert}</span>
+    container.innerHTML = certifications.map(group => `
+        <div class="cert-group">
+            <h3 class="cert-group-title">
+                <i data-lucide="${group.icon}"></i>
+                ${group.group}
+            </h3>
+            <div class="cert-group-grid">
+                ${group.items.map(cert => `
+                    <div class="cert-card glass reveal" data-tilt>
+                        <div class="cert-card-header">
+                            <i data-lucide="award"></i>
+                            <h4>${cert.title}</h4>
+                        </div>
+                        <p class="cert-issuer">${cert.issuer}${cert.date ? ` &middot; ${cert.date}` : ''}</p>
+                        ${cert.credentialId ? `<p class="cert-id">ID: ${cert.credentialId}</p>` : ''}
+                        <div class="cert-links">
+                            ${cert.file ? `<a href="${cert.file}" target="_blank" rel="noopener noreferrer" class="cert-link"><i data-lucide="file-text"></i> View Certificate</a>` : ''}
+                            ${cert.verify ? `<a href="${cert.verify}" target="_blank" rel="noopener noreferrer" class="cert-link"><i data-lucide="external-link"></i> Verify</a>` : ''}
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
         </div>
     `).join('');
     lucide.createIcons();

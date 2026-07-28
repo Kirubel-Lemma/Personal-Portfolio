@@ -793,34 +793,141 @@ h4,
     color: var(--primary);
 }
 
+/* Achievements strip (About section) */
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.25rem;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px dashed var(--border);
+}
+
+.achievement-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+}
+
+.achievement-item i {
+    color: var(--primary);
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+}
+
+.achievement-item h4 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.1;
+}
+
+.achievement-item p {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+    line-height: 1.4;
+}
+
 /* Certifications Section */
 .certs-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.cert-group-title {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    font-size: 1.3rem;
+    color: var(--text-primary);
+    margin-bottom: 1.25rem;
+}
+
+.cert-group-title i {
+    color: var(--primary);
+}
+
+.cert-group-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
 }
 
-.cert-item {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+.cert-card {
     padding: 1.5rem;
     border-radius: 1rem;
     transition: var(--transition);
+    display: flex;
+    flex-direction: column;
 }
 
-.cert-item:hover {
-    transform: translateX(10px);
-    background: var(--border);
+.cert-card:hover {
+    transform: translateY(-5px);
 }
 
-.cert-item i {
+.cert-card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.cert-card-header i {
     color: var(--primary);
+    flex-shrink: 0;
+    margin-top: 0.15rem;
 }
 
-.cert-item span {
+.cert-card-header h4 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.4;
+}
+
+.cert-issuer {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+}
+
+.cert-id {
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    font-family: monospace;
+    margin-bottom: 1rem;
+    word-break: break-all;
+}
+
+.cert-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.25rem;
+    margin-top: auto;
+    padding-top: 0.75rem;
+}
+
+.cert-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--primary);
+    font-size: 0.85rem;
     font-weight: 500;
-    font-size: 1.1rem;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.cert-link:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+.cert-link i {
+    width: 14px;
+    height: 14px;
 }
 
 /* Contact Section */
