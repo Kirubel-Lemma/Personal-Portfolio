@@ -267,16 +267,9 @@ const certifications = [
         ]
     },
     {
-        group: 'Developer (Programming)',
-        icon: 'code',
+        group: 'Containerization',
+        icon: 'box',
         items: [
-            {
-                title: 'Python Developer Certification',
-                issuer: 'freeCodeCamp.org',
-                date: 'Mar 2026',
-                verify: 'https://freecodecamp.org/certification/fcce6efb154-2f0a-4ac2-b32d-86b58858f2f5/python-v9',
-                file: 'assets/certs/freecodecamp-python-developer.pdf'
-            },
             {
                 title: 'Kubernetes and Cloud Native Essentials (LFS250)',
                 issuer: 'The Linux Foundation',
@@ -295,6 +288,19 @@ const certifications = [
                 date: 'Mar 2026',
                 verify: 'https://codesignal.com/learn/certificates/cmm3rw155004kjs045scdh5f1/courses/629',
                 file: 'assets/certs/codesignal-docker-images-containers.pdf'
+            }
+        ]
+    },
+    {
+        group: 'Programming',
+        icon: 'code',
+        items: [
+            {
+                title: 'Python Developer Certification',
+                issuer: 'freeCodeCamp.org',
+                date: 'Mar 2026',
+                verify: 'https://freecodecamp.org/certification/fcce6efb154-2f0a-4ac2-b32d-86b58858f2f5/python-v9',
+                file: 'assets/certs/freecodecamp-python-developer.pdf'
             },
             {
                 title: 'The Database Development Life Cycle',
@@ -562,7 +568,7 @@ function initTerminalTyping() {
     const el = document.getElementById('ssh-snippet');
     if (!el) return;
 
-    const phrases = ['DevOps Engineer', 'Web-Hosting Engineer', 'Network System Operations'];
+    const phrases = ['DevOps Engineer', 'Web-Hosting Engineer', 'Network System Operations', 'Cloud Engineer', 'Site Reliability Engineer'];
     let pIndex = 0;
     let charIndex = 0;
     let typing = true;
