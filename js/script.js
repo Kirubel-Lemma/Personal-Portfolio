@@ -114,12 +114,10 @@ const experiences = [
 const projects = [
     {
         title: 'Splunk Sunset: Enterprise Observability Migration',
-        description: 'Architected and deployed VictoriaLogs and VictoriaMetrics as scalable, high-performance observability platforms, modernizing logging and metrics infrastructure during an enterprise migration from Splunk Enterprise to the Grafana ecosystem across 52 Kubernetes clusters.',
+        description: 'Migrated logging and metrics infrastructure from Splunk Enterprise to a Grafana-based observability stack across 52 Kubernetes clusters, using VictoriaLogs and VictoriaMetrics for scale.',
         features: [
-            'Designed distributed tracing with Grafana Tempo integrated with OpenTelemetry Collector and Gateway for end-to-end trace visibility across microservices and Kubernetes workloads.',
-            'Standardized telemetry pipelines for metrics, logs, and traces with centralized routing, filtering, enrichment, and forwarding strategies.',
-            'Implemented GitOps-based continuous delivery with Flux CD to automate Kubernetes resource reconciliation across multi-cluster environments.',
-            'Administered Harbor private container registry, enforcing vulnerability scanning, image signing, retention policies, and RBAC.'
+            'Designed distributed tracing with Grafana Tempo and OpenTelemetry for end-to-end visibility across Kubernetes workloads.',
+            'Automated multi-cluster delivery with Flux CD and secured the Harbor registry with vulnerability scanning and RBAC.'
         ],
         icon: 'activity',
         tags: ['VictoriaMetrics', 'VictoriaLogs', 'Grafana Tempo', 'OpenTelemetry', 'Kubernetes', 'Flux CD', 'Harbor'],
