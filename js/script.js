@@ -3,7 +3,7 @@ const skillCategories = [
     {
         title: 'Linux',
         icon: 'terminal',
-        skills: ['Ubuntu', 'CentOS', 'AlmaLinux']
+        skills: ['Ubuntu', 'CentOS', 'AlmaLinux', 'RHEL']
     },
     {
         title: 'Automation & Infrastructure as Code',
@@ -100,13 +100,13 @@ const experiences = [
         location: 'Addis Ababa, Ethiopia',
         description: [
             'Designed and managed full DevOps environments; deployed Kubernetes clusters.',
-            'Implemented monitoring solutions (Zabbix, ELKStack) for observability.',
+            'Implemented monitoring solutions (Zabbix, ELK Stack) for observability.',
             'Architected and deployed scalable CI/CD pipelines using GitHub Actions for automated builds, testing, and deployments.',
-            'Setup and optimized Docker containers to ensure high availability and fault tolerance.',
+            'Set up and optimized Docker containers to ensure high availability and fault tolerance.',
             'Developed and documented product features, adhering to clean code principles and industry standards.',
             'Designed and implemented LAN/WAN/VLAN network infrastructure for enterprise environments.',
-            'Setup load balancer (HAProxy) for PostgreSQL.',
-            'Setup and managed secure network environments using OPNsense firewall and oversaw data center infrastructure spanning servers.'
+            'Set up a load balancer (HAProxy) for PostgreSQL.',
+            'Set up and managed secure network environments using an OPNsense firewall and oversaw data center infrastructure spanning multiple servers.'
         ]
     }
 ];
@@ -140,7 +140,7 @@ const projects = [
     },
     {
         title: 'Odoo Server Setup and Deployment',
-        description: 'Architected and deployed scalable CI/CD pipelines using GitHub Action for automated builds, testing, and deployments. Configured and optimized docker containers to ensure high availability and fault tolerance.',
+        description: 'Architected and deployed scalable CI/CD pipelines using GitHub Actions for automated builds, testing, and deployments. Configured and optimized Docker containers to ensure high availability and fault tolerance.',
         features: [
             'Collaborated with development teams to enhance delivery efficiency and maintain robust quality standards.',
             'Developed and documented product features, adhering to clean code principles and industry standards.'
@@ -342,11 +342,11 @@ function renderProjects() {
             <p class="project-description" style="color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.6;">${proj.description}</p>
             
             <h4 style="color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1rem;">Key Features</h4>
-            <ul style="color: var(--text-secondary); padding-left: 1.25rem; margin-bottom: 1.5rem; flex-grow: 1; font-size: 0.95rem; line-height: 1.6;">
+            <ul style="color: var(--text-secondary); padding-left: 1.25rem; margin-bottom: 1.5rem; font-size: 0.95rem; line-height: 1.6;">
                 ${proj.features.map(f => `<li style="margin-bottom: 0.25rem;">${f}</li>`).join('')}
             </ul>
 
-            <h4 style="color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1rem;">Technologies Used</h4>
+            <h4 style="color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1rem; margin-top: auto;">Technologies Used</h4>
             <div class="skill-tags">
                 ${proj.tags.map(tag => `<span class="skill-tag">${tag}</span>`).join('')}
             </div>
