@@ -267,9 +267,41 @@ const certifications = [
         ]
     },
     {
-        group: 'Other',
-        icon: 'award',
+        group: 'Developer (Programming)',
+        icon: 'code',
         items: [
+            {
+                title: 'Python Developer Certification',
+                issuer: 'freeCodeCamp.org',
+                date: 'Mar 2026',
+                verify: 'https://freecodecamp.org/certification/fcce6efb154-2f0a-4ac2-b32d-86b58858f2f5/python-v9',
+                file: 'assets/certs/freecodecamp-python-developer.pdf'
+            },
+            {
+                title: 'Kubernetes and Cloud Native Essentials (LFS250)',
+                issuer: 'The Linux Foundation',
+                date: 'Mar 2026',
+                credentialId: 'LF-pvpmsts0mk',
+                file: 'assets/certs/lf-kubernetes-cloud-native-essentials-lfs250.pdf'
+            },
+            {
+                title: 'Introduction to Kubernetes (LFS158)',
+                issuer: 'The Linux Foundation',
+                file: 'assets/certs/lf-intro-to-kubernetes-lfs158.pdf'
+            },
+            {
+                title: 'Docker Images & Containers',
+                issuer: 'CodeSignal',
+                date: 'Mar 2026',
+                verify: 'https://codesignal.com/learn/certificates/cmm3rw155004kjs045scdh5f1/courses/629',
+                file: 'assets/certs/codesignal-docker-images-containers.pdf'
+            },
+            {
+                title: 'The Database Development Life Cycle',
+                issuer: 'OpenLearn (The Open University)',
+                date: 'Feb 2026',
+                file: 'assets/certs/openlearn-database-development-lifecycle.pdf'
+            },
             {
                 title: 'Programming Fundamentals',
                 issuer: 'Udacity',
@@ -346,7 +378,7 @@ function renderProjects() {
                 ${proj.features.map(f => `<li style="margin-bottom: 0.25rem;">${f}</li>`).join('')}
             </ul>
 
-            <h4 style="color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1rem; margin-top: auto;">Technologies Used</h4>
+            <h4 style="color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1rem;">Technologies Used</h4>
             <div class="skill-tags">
                 ${proj.tags.map(tag => `<span class="skill-tag">${tag}</span>`).join('')}
             </div>
