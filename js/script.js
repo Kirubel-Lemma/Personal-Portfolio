@@ -151,6 +151,20 @@ const projects = [
         external: '#'
     },
     {
+        title: 'Observability Platform Migration: Flux to ArgoCD (GitOps)',
+        description: 'Migrated the production observability stack (Grafana, metrics, logs, traces, alerting and OpenTelemetry collection) on a two-data-center Kubernetes environment from Flux CD to ArgoCD, with a Git-driven delivery pipeline and ordered rollouts.',
+        features: [
+            'Used an app-of-apps pattern and sync-waves, verifying each component against the live Flux artifact by digest before cutover to catch configuration drift.',
+            'Built a GitLab CI pipeline that publishes the repository as an OCI artifact to Harbor, which ArgoCD syncs from, with secrets kept out of Git via External Secrets and Vault.',
+            'Designed a least-privilege multi-cluster model: namespace-scoped ServiceAccounts across 51 leaf clusters, extended through a single ApplicationSet.',
+            'Managed Grafana access as code and wrote the RFC, service impact analysis and method of procedure with rollback plans.'
+        ],
+        icon: 'git-merge',
+        tags: ['ArgoCD', 'Flux CD', 'ApplicationSet', 'Helm', 'Kustomize', 'GitLab CI', 'Harbor', 'Vault', 'External Secrets', 'Grafana', 'VictoriaMetrics', 'VictoriaLogs', 'Tempo', 'OpenTelemetry', 'Kubernetes'],
+        github: '#',
+        external: '#'
+    },
+    {
         title: 'Secure Banking API Integration via IPSec VPN',
         description: 'Designed and implemented secure IPSec VPN tunnels to enable encrypted API communication with financial institutions. Configured firewall policies, NAT rules, and routing to ensure secure and stable connectivity.',
         features: [
@@ -363,7 +377,7 @@ function renderProjects() {
                 ${proj.features.map(f => `<li style="margin-bottom: 0.25rem;">${f}</li>`).join('')}
             </ul>
 
-            <h4 style="color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1rem;">Technologies Used</h4>
+            <h4 style="color: var(--text-primary); margin-top: auto; margin-bottom: 0.5rem; font-size: 1rem;">Technologies Used</h4>
             <div class="skill-tags">
                 ${proj.tags.map(tag => `<span class="skill-tag">${tag}</span>`).join('')}
             </div>
