@@ -152,12 +152,11 @@ const projects = [
     },
     {
         title: 'Observability Platform Migration: Flux to ArgoCD (GitOps)',
-        description: 'Migrated the production observability stack (Grafana, metrics, logs, traces, alerting and OpenTelemetry collection) on a two-data-center Kubernetes environment from Flux CD to ArgoCD, with a Git-driven delivery pipeline and ordered rollouts.',
+        description: 'Migrated the production observability stack on a two-data-center Kubernetes environment from Flux CD to ArgoCD, with Git-driven delivery and ordered rollouts.',
         features: [
-            'Used an app-of-apps pattern and sync-waves, verifying each component against the live Flux artifact by digest before cutover to catch configuration drift.',
-            'Built a GitLab CI pipeline that publishes the repository as an OCI artifact to Harbor, which ArgoCD syncs from, with secrets kept out of Git via External Secrets and Vault.',
-            'Designed a least-privilege multi-cluster model: namespace-scoped ServiceAccounts across 51 leaf clusters, extended through a single ApplicationSet.',
-            'Managed Grafana access as code and wrote the RFC, service impact analysis and method of procedure with rollback plans.'
+            'Verified each component against the live Flux artifact by digest before cutover, catching configuration drift early.',
+            'Built a GitLab CI pipeline publishing OCI artifacts to Harbor for ArgoCD to sync, with secrets kept in Vault.',
+            'Scaled to 51 leaf clusters through a single ApplicationSet using least-privilege ServiceAccounts.'
         ],
         icon: 'git-merge',
         tags: ['ArgoCD', 'Flux CD', 'ApplicationSet', 'Helm', 'Kustomize', 'GitLab CI', 'Harbor', 'Vault', 'External Secrets', 'Grafana', 'VictoriaMetrics', 'VictoriaLogs', 'Tempo', 'OpenTelemetry', 'Kubernetes'],
