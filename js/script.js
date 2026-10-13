@@ -8,12 +8,12 @@ const skillCategories = [
     {
         title: 'Automation & Infrastructure as Code',
         icon: 'cpu',
-        skills: ['Jenkins', 'GitHub Actions', 'GitLab CI', 'Terraform', 'Terragrunt', 'Ansible', 'GitOps (Flux CD)']
+        skills: ['Jenkins', 'GitHub Actions', 'GitLab CI', 'Terraform', 'Terragrunt', 'Ansible', 'GitOps (Flux CD)', 'ArgoCD']
     },
     {
         title: 'Container Orchestration & Virtualization',
         icon: 'cloud',
-        skills: ['Kubernetes', 'Docker', 'Harbor', 'AWS', 'Hyper-V', 'Proxmox', 'VMware']
+        skills: ['Kubernetes', 'Docker', 'Harbor', 'Hyper-V', 'Proxmox', 'VMware', 'OpenStack']
     },
     {
         title: 'Version Control',
@@ -28,7 +28,7 @@ const skillCategories = [
     {
         title: 'Observability & Monitoring',
         icon: 'activity',
-        skills: ['Grafana', 'Prometheus', 'Grafana Tempo', 'OpenTelemetry', 'VictoriaMetrics', 'VictoriaLogs', 'ELK Stack', 'Zabbix', 'SigNoz']
+        skills: ['Grafana', 'Prometheus', 'Grafana Tempo', 'OpenTelemetry', 'VictoriaMetrics', 'VictoriaLogs', 'ELK Stack', 'Zabbix', 'SigNoz', 'Blackbox']
     },
     {
         title: 'Programming & Databases',
@@ -43,11 +43,25 @@ const skillCategories = [
     {
         title: 'Proxy, Load Balancing & Mail',
         icon: 'mail',
-        skills: ['Nginx', 'Traefik', 'HAProxy', 'Mailcow', 'Zimbra']
+        skills: ['Nginx', 'Traefik', 'HAProxy', 'Mailcow', 'Zimbra', 'Caddy', 'PM2']
     }
 ];
 
 const experiences = [
+    {
+        role: 'DevOps Engineer',
+        company: 'Ledger Technology PLC',
+        period: '09/2026 - Present',
+        location: 'Addis Ababa, Ethiopia',
+        description: [
+            "Maintain and optimize Ledger's cloud infrastructure using Docker and Kubernetes.",
+            'Set up and manage CI/CD pipelines for backend and frontend deployments.',
+            'Monitor system performance, uptime, and security using Grafana, Prometheus, or equivalent.',
+            'Implement infrastructure-as-code practices to ensure repeatability and reliability.',
+            'Support the development team with environment setup, DevOps tooling, and deployments.',
+            'Respond to infrastructure incidents and resolve issues within agreed timeframes.'
+        ]
+    },
     {
         role: 'DevOps Engineer',
         company: 'Safaricom Telecommunications Ethiopia PLC',
@@ -63,7 +77,7 @@ const experiences = [
     {
         role: 'Web-Hosting and DevOps Engineer',
         company: 'Ashewa Technology Solution S.C',
-        period: '02/2026 - Present',
+        period: '03/2026 - 08/2026',
         location: 'Addis Ababa, Ethiopia',
         description: [
             'Configured, maintained, and secured VPS, firewalls, and DDoS protection; managed and optimized VPN solutions for secure access.',
@@ -112,6 +126,18 @@ const experiences = [
 ];
 
 const projects = [
+    {
+        title: 'Ledger SaaS',
+        description: 'Set up a secure and highly available system by collaborating with developers, backed by a secure and highly available database.',
+        features: [
+            'Set up monitoring and alerting to catch system failures early.',
+            "Set up web probing for MOR's EIRS API and the system's APIs to track liveness, health, response time, and response code."
+        ],
+        icon: 'server',
+        tags: ['Grafana', 'Prometheus', 'Blackbox', 'High Availability', 'Monitoring'],
+        github: '#',
+        external: '#'
+    },
     {
         title: 'Splunk Sunset: Enterprise Observability Migration',
         description: 'Migrated logging and metrics infrastructure from Splunk Enterprise to a Grafana-based observability stack across 52 Kubernetes clusters, using VictoriaLogs and VictoriaMetrics for scale.',
@@ -164,51 +190,6 @@ const projects = [
 ];
 
 const certifications = [
-    {
-        group: 'Amazon Web Services',
-        icon: 'cloud',
-        items: [
-            {
-                title: 'Getting Started with DevOps on AWS',
-                issuer: 'AWS Training & Certification',
-                date: 'Feb 2026',
-                file: 'assets/certs/aws-devops-getting-started.pdf'
-            },
-            {
-                title: 'AWS Command Line Interface (CLI) Basics',
-                issuer: 'AWS Training & Certification',
-                date: 'Feb 2026',
-                file: 'assets/certs/aws-cli-basics.pdf'
-            },
-            {
-                title: 'AWS Cloud Practitioner Essentials',
-                issuer: 'Coursera (AWS-authorized)',
-                date: 'Sep 2025',
-                verify: 'https://coursera.org/verify/Q6PCQ5MLVYPC',
-                file: 'assets/certs/aws-cloud-practitioner-essentials.pdf'
-            },
-            {
-                title: 'Amazon EC2 Observability, Monitoring, and Troubleshooting',
-                issuer: 'AWS Skill Builder',
-                file: 'assets/certs/aws-ec2-observability.pdf'
-            },
-            {
-                title: 'Amazon Elastic Kubernetes Service (EKS)',
-                issuer: 'AWS Skill Builder',
-                file: 'assets/certs/aws-eks.pdf'
-            },
-            {
-                title: 'Deploying Applications with AWS Elastic Beanstalk',
-                issuer: 'AWS Skill Builder',
-                file: 'assets/certs/aws-elastic-beanstalk.pdf'
-            },
-            {
-                title: 'Advanced Testing Practices Using AWS DevOps Tools',
-                issuer: 'AWS Skill Builder',
-                file: 'assets/certs/aws-devops-testing.pdf'
-            }
-        ]
-    },
     {
         group: 'cPanel University',
         icon: 'server',
