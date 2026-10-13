@@ -159,7 +159,7 @@ const projects = [
             'Scaled to 51 leaf clusters through a single ApplicationSet using least-privilege ServiceAccounts.'
         ],
         icon: 'git-merge',
-        tags: ['ArgoCD', 'Flux CD', 'ApplicationSet', 'Helm', 'Kustomize', 'GitLab CI', 'Harbor', 'Vault', 'External Secrets', 'Grafana', 'VictoriaMetrics', 'VictoriaLogs', 'Tempo', 'OpenTelemetry', 'Kubernetes'],
+        tags: ['ArgoCD', 'Flux CD', 'ApplicationSet', 'Helm', 'GitLab CI', 'Harbor', 'Vault', 'Grafana', 'VictoriaMetrics', 'VictoriaLogs', 'Tempo', 'OpenTelemetry', 'Kubernetes'],
         github: '#',
         external: '#'
     },
