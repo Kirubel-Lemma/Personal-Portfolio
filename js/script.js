@@ -42,7 +42,9 @@ const skillCategories = [
     }
 ];
 
-const workModeIcons = { Remote: 'laptop', Hybrid: 'shuffle', Onsite: 'building' };
+const jobTypeIcons = { 'Full-time': 'briefcase-business', 'Part-time': 'timer' };
+const workModeIcons = { Remote: 'house-wifi', Hybrid: 'repeat-2', Onsite: 'building-2' };
+const badgeClass = value => value.toLowerCase().replace(/[^a-z]/g, '');
 
 const experiences = [
     {
@@ -50,8 +52,9 @@ const experiences = [
         company: 'Safaricom Telecommunications Ethiopia PLC',
         period: '03/2026 - Present',
         location: 'Addis Ababa, Ethiopia',
-        type: 'Part-time',
-        mode: 'Remote',
+        type: 'Full-time',
+        mode: 'Onsite',
+        logo: 'assets/logos/safaricom.png',
         description: [
             'Migrated the observability stack from Splunk Enterprise to the Grafana ecosystem.',
             'Managed OpenTelemetry Collectors across multiple Kubernetes clusters, standardizing telemetry pipelines for logs, metrics and distributed tracing.',
@@ -67,8 +70,9 @@ const experiences = [
         company: 'Ledger Technology PLC',
         period: '09/2026 - Present',
         location: 'Addis Ababa, Ethiopia',
-        type: 'Full-time',
-        mode: 'Hybrid',
+        type: 'Part-time',
+        mode: 'Remote',
+        logo: 'assets/logos/ledger.png',
         description: [
             "Maintain and optimize Ledger's cloud infrastructure for high availability.",
             'Build and manage CI/CD pipelines for automated, reliable deployments.',
@@ -83,7 +87,8 @@ const experiences = [
         period: '03/2026 - 08/2026',
         location: 'Addis Ababa, Ethiopia',
         type: 'Full-time',
-        mode: 'Onsite',
+        mode: 'Hybrid',
+        logo: 'assets/logos/ashewa.png',
         description: [
             'Configured, maintained and secured VPS servers for internal teams and clients.',
             'Installed, patched and monitored server software; implemented backup policies and disaster recovery plans to meet high uptime standards.',
@@ -98,6 +103,9 @@ const experiences = [
         company: 'Kispay Financial Solution S.C',
         period: '10/2025 - 02/2026',
         location: 'Addis Ababa, Ethiopia',
+        type: 'Full-time',
+        mode: 'Onsite',
+        logo: 'assets/logos/kispay.png',
         description: [
             'Maintained PostgreSQL/MySQL servers and the Mailcow email system, ensuring 99% uptime for business communications.',
             'Designed, implemented and maintained IPSec VPN tunnels for secure API channels with CBE, Awash Bank, M-Pesa and Telebirr.',
@@ -116,6 +124,9 @@ const experiences = [
         company: 'Hagbes Pvt. Ltd. Co.',
         period: '12/2023 - 09/2025',
         location: 'Addis Ababa, Ethiopia',
+        type: 'Full-time',
+        mode: 'Onsite',
+        logo: 'assets/logos/hagbes.png',
         description: [
             'Designed and managed end-to-end DevOps environments.',
             'Built scalable CI/CD pipelines with GitHub Actions for automated builds, testing and deployments.',
@@ -354,15 +365,21 @@ function renderExperience() {
         <div class="timeline-item reveal">
             <div class="timeline-dot"><i data-lucide="briefcase"></i></div>
             <div class="timeline-content">
-                <h3 class="exp-role">${exp.role}</h3>
+                <div class="exp-header">
+                    ${exp.logo ? `<img class="exp-logo" src="${exp.logo}" alt="${exp.company} logo" loading="lazy">` : ''}
+                    <div class="exp-heading">
+                        <h3 class="exp-role">${exp.role}</h3>
+                        <div class="exp-company">${exp.company}</div>
+                    </div>
+                </div>
                 <div class="exp-meta">
-                    <span><i data-lucide="building-2"></i> ${exp.company}</span>
                     <span><i data-lucide="calendar"></i> ${exp.period}</span>
+                    <span><i data-lucide="map-pin"></i> ${exp.location}</span>
                 </div>
                 ${exp.type ? `
                 <div class="exp-badges">
-                    <span class="exp-badge"><i data-lucide="clock"></i> ${exp.type}</span>
-                    <span class="exp-badge"><i data-lucide="${workModeIcons[exp.mode] || 'map-pin'}"></i> ${exp.mode}</span>
+                    <span class="exp-badge badge-${badgeClass(exp.type)}"><span class="badge-icon"><i data-lucide="${jobTypeIcons[exp.type] || 'briefcase'}"></i></span>${exp.type}</span>
+                    <span class="exp-badge badge-${badgeClass(exp.mode)}"><span class="badge-icon"><i data-lucide="${workModeIcons[exp.mode] || 'map-pin'}"></i></span>${exp.mode}</span>
                 </div>` : ''}
                 <ul class="experience-desc">
                     ${exp.description.map(item => `<li>${item}</li>`).join('')}
