@@ -13,7 +13,7 @@ const skillCategories = [
     {
         title: 'Virtualization & Containerization',
         icon: 'cloud',
-        skills: ['Kubernetes', 'Docker', 'Proxmox', 'VMware', 'Hyper-V', 'VirtualBox']
+        skills: ['Kubernetes', 'Red Hat OpenShift', 'Tanzu', 'Docker', 'Proxmox', 'VMware', 'ESXi', 'vSphere', 'vCenter', 'Hyper-V']
     },
     {
         title: 'Version Control & Registry',
@@ -23,7 +23,7 @@ const skillCategories = [
     {
         title: 'Networking & Security',
         icon: 'network',
-        skills: ['OPNsense', 'OpenVPN', 'IPsec', 'WireGuard', 'HashiCorp Vault', 'SonarQube']
+        skills: ['OPNsense', 'OpenVPN', 'IPsec', 'WireGuard', 'HashiCorp Vault', 'Keycloak', 'SonarQube']
     },
     {
         title: 'Observability & Monitoring',
@@ -200,6 +200,62 @@ const projects = [
 
 const certifications = [
     {
+        group: 'Containerization',
+        icon: 'box',
+        items: [
+            {
+                title: 'Advanced Application Management with Red Hat OpenShift',
+                issuer: 'Red Hat via Coursera',
+                date: 'Nov 2026',
+                verify: 'https://coursera.org/verify/D2KJ40MGTCG1',
+                file: 'assets/certs/redhat-advanced-openshift-application-management.pdf'
+            },
+            {
+                title: 'Advanced Kubernetes',
+                issuer: 'LinkedIn Learning'
+            },
+            {
+                title: 'OpenShift Container Orchestration and Deployment',
+                issuer: 'LinkedIn Learning'
+            },
+            {
+                title: 'Managing Cloud-native Applications with Kubernetes',
+                issuer: 'Red Hat via Coursera',
+                date: 'Nov 2026',
+                verify: 'https://coursera.org/verify/75TMODC5NF6F',
+                file: 'assets/certs/redhat-managing-cloud-native-apps-kubernetes.pdf'
+            },
+            {
+                title: 'Kubernetes and Cloud Native Essentials (LFS250)',
+                issuer: 'The Linux Foundation',
+                date: 'Mar 2026',
+                credentialId: 'LF-pvpmsts0mk',
+                file: 'assets/certs/lf-kubernetes-cloud-native-essentials-lfs250.pdf'
+            },
+            {
+                title: 'Docker Images & Containers',
+                issuer: 'CodeSignal',
+                date: 'Mar 2026',
+                verify: 'https://codesignal.com/learn/certificates/cmm3rw155004kjs045scdh5f1/courses/629',
+                file: 'assets/certs/codesignal-docker-images-containers.pdf'
+            }
+        ]
+    },
+    {
+        group: 'Infrastructure as Code & Security',
+        icon: 'shield',
+        items: [
+            {
+                title: 'Advanced Terraform',
+                issuer: 'LinkedIn Learning'
+            },
+            {
+                title: 'Endpoint Security',
+                issuer: 'Cisco Networking Academy'
+            }
+        ]
+    },
+    {
         group: 'cPanel University',
         icon: 'server',
         items: [
@@ -218,52 +274,18 @@ const certifications = [
                 file: 'assets/certs/cpanel-whm-sysadmin-2.pdf'
             },
             {
-                title: 'cPanel Certified Partner Accreditation',
-                issuer: 'cPanel University',
-                date: 'Mar 2026',
-                credentialId: '967c7912-1211-4ecd-bcd5-432e515b179d',
-                file: 'assets/certs/cpanel-certified-partner.pdf'
-            },
-            {
                 title: 'cPanel & WHM System Administrator I',
                 issuer: 'cPanel University',
                 date: 'Mar 2026',
                 credentialId: '8f3b140c-cac3-4d7c-bfdd-acd1b5fb32b8',
                 file: 'assets/certs/cpanel-whm-sysadmin-1.pdf'
-            }
-        ]
-    },
-    {
-        group: 'Containerization',
-        icon: 'box',
-        items: [
+            },
             {
-                title: 'Kubernetes and Cloud Native Essentials (LFS250)',
-                issuer: 'The Linux Foundation',
+                title: 'cPanel Certified Partner Accreditation',
+                issuer: 'cPanel University',
                 date: 'Mar 2026',
-                credentialId: 'LF-pvpmsts0mk',
-                file: 'assets/certs/lf-kubernetes-cloud-native-essentials-lfs250.pdf'
-            },
-            {
-                title: 'Advanced Application Management with Red Hat OpenShift',
-                issuer: 'Red Hat via Coursera',
-                date: 'Nov 2026',
-                verify: 'https://coursera.org/verify/D2KJ40MGTCG1',
-                file: 'assets/certs/redhat-advanced-openshift-application-management.pdf'
-            },
-            {
-                title: 'Managing Cloud-native Applications with Kubernetes',
-                issuer: 'Red Hat via Coursera',
-                date: 'Nov 2026',
-                verify: 'https://coursera.org/verify/75TMODC5NF6F',
-                file: 'assets/certs/redhat-managing-cloud-native-apps-kubernetes.pdf'
-            },
-            {
-                title: 'Docker Images & Containers',
-                issuer: 'CodeSignal',
-                date: 'Mar 2026',
-                verify: 'https://codesignal.com/learn/certificates/cmm3rw155004kjs045scdh5f1/courses/629',
-                file: 'assets/certs/codesignal-docker-images-containers.pdf'
+                credentialId: '967c7912-1211-4ecd-bcd5-432e515b179d',
+                file: 'assets/certs/cpanel-certified-partner.pdf'
             }
         ]
     },
