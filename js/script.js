@@ -560,7 +560,7 @@ function initTerminalTyping() {
     const el = document.getElementById('ssh-snippet');
     if (!el) return;
 
-    const phrases = ['DevOps Engineer', 'Infrastructure Engineer', 'Network System Operations', 'Cloud Engineer', 'Site Reliability Engineer'];
+    const phrases = ['DevOps Engineer', 'System Engineer', 'Cloud Infrastructure'];
     let pIndex = 0;
     let charIndex = 0;
     let typing = true;
