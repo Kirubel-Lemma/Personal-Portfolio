@@ -42,12 +42,16 @@ const skillCategories = [
     }
 ];
 
+const workModeIcons = { Remote: 'laptop', Hybrid: 'shuffle', Onsite: 'building' };
+
 const experiences = [
     {
         role: 'DevOps Engineer',
         company: 'Safaricom Telecommunications Ethiopia PLC',
         period: '03/2026 - Present',
         location: 'Addis Ababa, Ethiopia',
+        type: 'Part-time',
+        mode: 'Remote',
         description: [
             'Migrated the observability stack from Splunk Enterprise to the Grafana ecosystem.',
             'Managed OpenTelemetry Collectors across multiple Kubernetes clusters, standardizing telemetry pipelines for logs, metrics and distributed tracing.',
@@ -63,6 +67,8 @@ const experiences = [
         company: 'Ledger Technology PLC',
         period: '09/2026 - Present',
         location: 'Addis Ababa, Ethiopia',
+        type: 'Full-time',
+        mode: 'Hybrid',
         description: [
             "Maintain and optimize Ledger's cloud infrastructure for high availability.",
             'Build and manage CI/CD pipelines for automated, reliable deployments.',
@@ -76,6 +82,8 @@ const experiences = [
         company: 'Ashewa Technology Solution S.C',
         period: '03/2026 - 08/2026',
         location: 'Addis Ababa, Ethiopia',
+        type: 'Full-time',
+        mode: 'Onsite',
         description: [
             'Configured, maintained and secured VPS servers for internal teams and clients.',
             'Installed, patched and monitored server software; implemented backup policies and disaster recovery plans to meet high uptime standards.',
@@ -351,6 +359,11 @@ function renderExperience() {
                     <span><i data-lucide="building-2"></i> ${exp.company}</span>
                     <span><i data-lucide="calendar"></i> ${exp.period}</span>
                 </div>
+                ${exp.type ? `
+                <div class="exp-badges">
+                    <span class="exp-badge"><i data-lucide="clock"></i> ${exp.type}</span>
+                    <span class="exp-badge"><i data-lucide="${workModeIcons[exp.mode] || 'map-pin'}"></i> ${exp.mode}</span>
+                </div>` : ''}
                 <ul class="experience-desc">
                     ${exp.description.map(item => `<li>${item}</li>`).join('')}
                 </ul>

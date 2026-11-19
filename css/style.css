@@ -710,6 +710,32 @@ h4,
     gap: 1.5rem;
 }
 
+.exp-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: -0.75rem 0 1.25rem;
+}
+
+.exp-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.2rem 0.7rem;
+    border-radius: 999px;
+    border: 1px solid var(--border-hover);
+    background: rgba(56, 189, 248, 0.08);
+    color: var(--text-primary);
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.exp-badge i {
+    width: 14px;
+    height: 14px;
+    color: var(--primary);
+}
+
 .exp-meta i {
     vertical-align: middle;
     margin-right: 0.25rem;
