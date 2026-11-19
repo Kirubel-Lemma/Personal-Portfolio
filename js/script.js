@@ -1,77 +1,74 @@
 /* Data Definitions */
 const skillCategories = [
     {
-        title: 'Linux',
+        title: 'Windows & Linux',
         icon: 'terminal',
-        skills: ['Ubuntu', 'CentOS', 'AlmaLinux', 'RHEL']
+        skills: ['Ubuntu', 'RHEL', 'Windows Server']
     },
     {
         title: 'Automation & Infrastructure as Code',
         icon: 'cpu',
-        skills: ['Jenkins', 'GitHub Actions', 'GitLab CI', 'Terraform', 'Terragrunt', 'Ansible', 'GitOps (Flux CD)', 'ArgoCD']
+        skills: ['Jenkins', 'GitLab CI', 'GitHub Actions', 'Terraform', 'Ansible', 'Flux CD', 'Argo CD', 'Helm']
     },
     {
-        title: 'Container Orchestration & Virtualization',
+        title: 'Virtualization & Containerization',
         icon: 'cloud',
-        skills: ['Kubernetes', 'Docker', 'Harbor', 'Hyper-V', 'Proxmox', 'VMware', 'OpenStack']
+        skills: ['Kubernetes', 'Docker', 'Proxmox', 'VMware', 'Hyper-V', 'VirtualBox']
     },
     {
-        title: 'Version Control',
+        title: 'Version Control & Registry',
         icon: 'git-merge',
-        skills: ['Git', 'GitHub', 'GitLab']
+        skills: ['Git', 'GitLab', 'GitHub', 'Harbor']
     },
     {
-        title: 'Networking',
+        title: 'Networking & Security',
         icon: 'network',
-        skills: ['OPNsense', 'UniFi', 'pfSense', 'OpenVPN', 'IPsec', 'WireGuard']
+        skills: ['OPNsense', 'OpenVPN', 'IPsec', 'WireGuard', 'HashiCorp Vault', 'SonarQube']
     },
     {
         title: 'Observability & Monitoring',
         icon: 'activity',
-        skills: ['Grafana', 'Prometheus', 'Grafana Tempo', 'OpenTelemetry', 'VictoriaMetrics', 'VictoriaLogs', 'ELK Stack', 'Zabbix', 'SigNoz', 'Blackbox']
+        skills: ['Grafana', 'Prometheus', 'OpenTelemetry', 'ELK Stack', 'SigNoz', 'Blackbox', 'VictoriaMetrics', 'VictoriaLogs', 'Grafana Tempo']
     },
     {
         title: 'Programming & Databases',
         icon: 'code',
-        skills: ['BASH', 'Shell Script', 'Python', 'Java', 'MySQL', 'PostgreSQL', 'MongoDB', 'Redis', 'Apache Doris']
-    },
-    {
-        title: 'Secrets & Security Tooling',
-        icon: 'shield',
-        skills: ['HashiCorp Vault', 'SonarQube', 'IAM', 'SSL/TLS', 'DDoS Protection']
+        skills: ['BASH', 'Shell Script', 'Python', 'MySQL', 'PostgreSQL', 'MongoDB', 'Redis', 'Apache Doris']
     },
     {
         title: 'Proxy, Load Balancing & Mail',
         icon: 'mail',
-        skills: ['Nginx', 'Traefik', 'HAProxy', 'Mailcow', 'Zimbra', 'Caddy', 'PM2']
+        skills: ['Nginx', 'Traefik', 'Caddy', 'HAProxy', 'PM2', 'Mailcow', 'Zimbra']
     }
 ];
 
 const experiences = [
     {
         role: 'DevOps Engineer',
-        company: 'Ledger Technology PLC',
-        period: '09/2026 - Present',
-        location: 'Addis Ababa, Ethiopia',
-        description: [
-            "Maintain and optimize Ledger's cloud infrastructure using Docker and Kubernetes.",
-            'Set up and manage CI/CD pipelines for backend and frontend deployments.',
-            'Monitor system performance, uptime, and security using Grafana, Prometheus, or equivalent.',
-            'Implement infrastructure-as-code practices to ensure repeatability and reliability.',
-            'Support the development team with environment setup, DevOps tooling, and deployments.',
-            'Respond to infrastructure incidents and resolve issues within agreed timeframes.'
-        ]
-    },
-    {
-        role: 'DevOps Engineer',
         company: 'Safaricom Telecommunications Ethiopia PLC',
         period: '03/2026 - Present',
         location: 'Addis Ababa, Ethiopia',
         description: [
-            'Architected and deployed VictoriaLogs, VictoriaMetrics, and Grafana Tempo to modernize observability infrastructure during migration from Splunk Enterprise to the Grafana stack.',
-            'Managed OpenTelemetry Collector and Gateway deployments across 52 Kubernetes clusters, standardizing telemetry pipelines for logs, metrics, and distributed tracing.',
-            'Implemented GitOps and CI/CD workflows using Flux CD and GitLab to automate Kubernetes deployments, Helm chart delivery, and infrastructure reconciliation.',
-            'Administered Harbor private registry with vulnerability scanning, image signing, and RBAC enforcement to strengthen container security and compliance.'
+            'Migrated the observability stack from Splunk Enterprise to the Grafana ecosystem.',
+            'Managed OpenTelemetry Collectors across multiple Kubernetes clusters, standardizing telemetry pipelines for logs, metrics and distributed tracing.',
+            'Implemented GitOps and CI/CD workflows with GitLab CI and Argo CD to automate Kubernetes deployments, Helm chart delivery and declarative infrastructure reconciliation across clusters.',
+            'Administered Harbor private registry with vulnerability scanning for secure images.',
+            'Administered HashiCorp Vault for secret management and rotation.',
+            'Configured RBAC with LDAP and Active Directory integration.',
+            'Built dashboards across multiple platforms for real-time service visibility.'
+        ]
+    },
+    {
+        role: 'DevOps Engineer',
+        company: 'Ledger Technology PLC',
+        period: '09/2026 - Present',
+        location: 'Addis Ababa, Ethiopia',
+        description: [
+            "Maintain and optimize Ledger's cloud infrastructure for high availability.",
+            'Build and manage CI/CD pipelines for automated, reliable deployments.',
+            'Set up the observability stack and monitor system performance, uptime and security using Grafana dashboards and alerts.',
+            'Apply infrastructure-as-code practices for repeatable, reliable environments.',
+            'Respond to infrastructure incidents and resolve them within agreed SLAs.'
         ]
     },
     {
@@ -80,13 +77,12 @@ const experiences = [
         period: '03/2026 - 08/2026',
         location: 'Addis Ababa, Ethiopia',
         description: [
-            'Configured, maintained, and secured VPS, firewalls, and DDoS protection; managed and optimized VPN solutions for secure access.',
-            'Installed, updated, and monitored server software; implemented backup policies, disaster recovery plans, and high uptime standards.',
-            'Automated server tasks, account provisioning, and monitoring workflows; implemented CI/CD pipelines using GitHub and GitLab.',
-            'Handled domain setup, DNS configuration, registrar management, and SSL certificate setup/support.',
-            'Optimized server performance, caching strategies, and resource management; ensured security best practices and data protection compliance.',
-            'Troubleshot hosting and domain issues efficiently; provided professional customer support for hosting-related queries.',
-            'Managed and integrated control panels and billing systems (WHMCS readiness) for automated provisioning and payment follow-up.'
+            'Configured, maintained and secured VPS servers for internal teams and clients.',
+            'Installed, patched and monitored server software; implemented backup policies and disaster recovery plans to meet high uptime standards.',
+            'Automated routine server tasks and built GitLab CI pipelines for deployments to VMs, Docker and Kubernetes.',
+            'Managed domain setup, DNS, registrars and SSL certificate provisioning.',
+            'Tuned server performance, caching and resource usage while enforcing security best practices and data protection compliance.',
+            'Integrated control panels and billing systems (WHMCS) for automated client provisioning and payment follow-up.'
         ]
     },
     {
@@ -95,43 +91,43 @@ const experiences = [
         period: '10/2025 - 02/2026',
         location: 'Addis Ababa, Ethiopia',
         description: [
-            'Maintained PostgreSQL/MySQL servers and Mailcow email systems, ensuring 99.9% uptime for corporate communications.',
-            'Designed, implemented, and maintained IPSec VPN for secure API channels with CBE, Awash Bank, M-Pesa, and Telebirr.',
-            'Configured Jenkins for scalable CI/CD pipelines; automated builds, tests, deployments, and workflows to cut manual effort and time.',
-            'Implemented HashiCorp Vault for secret management; configured secure storage, policies, dynamic secrets, and app integration for least-privilege access.',
-            'Set up SigNoz for observability; deployed metrics/traces/logs monitoring, integrated OpenTelemetry, and enabled dashboards/alerting for real-time insights.',
-            'Managed Docker containerization; built, optimized, and orchestrated containers for high availability, fault tolerance, and consistent dev/prod environments.',
-            'Handled GitHub repo management and version control; administered repos, branches, PRs, access, and CI/CD integrations for collaborative delivery.',
-            'Integrated SonarQube into Jenkins CI/CD pipelines; automated scans on builds/PRs to detect bugs, vulnerabilities, code smells, and duplication.',
-            'Set up Redis as high-performance in-memory cache; configured key-value storage to speed up responses and reduce database load.',
-            'Deployed Apache Doris as real-time MPP data warehouse; managed columnar storage and analytics for fast, sub-second queries on large logs/data.'
+            'Maintained PostgreSQL/MySQL servers and the Mailcow email system, ensuring 99% uptime for business communications.',
+            'Designed, implemented and maintained IPSec VPN tunnels for secure API channels with CBE, Awash Bank, M-Pesa and Telebirr.',
+            'Configured Jenkins for scalable, automated CI/CD pipelines.',
+            'Implemented HashiCorp Vault for secret management, configuring secure storage, dynamic secrets and application integration.',
+            'Deployed SigNoz with OpenTelemetry for metrics, traces and logs, enabling dashboards and real-time alerting.',
+            'Built, optimized and orchestrated Docker containers for high availability and consistent dev/prod environments.',
+            'Managed GitHub repositories, branching and version control.',
+            'Integrated SonarQube into Jenkins pipelines for automated code quality scans.',
+            'Set up Redis as a high-performance in-memory cache to reduce database load.',
+            'Deployed Apache Doris as a real-time MPP data warehouse for fast analytics.'
         ]
     },
     {
-        role: 'Network and System Administrator',
+        role: 'Junior Network and System Administrator',
         company: 'Hagbes Pvt. Ltd. Co.',
         period: '12/2023 - 09/2025',
         location: 'Addis Ababa, Ethiopia',
         description: [
-            'Designed and managed full DevOps environments; deployed Kubernetes clusters.',
-            'Implemented monitoring solutions (Zabbix, ELK Stack) for observability.',
-            'Architected and deployed scalable CI/CD pipelines using GitHub Actions for automated builds, testing, and deployments.',
-            'Set up and optimized Docker containers to ensure high availability and fault tolerance.',
-            'Developed and documented product features, adhering to clean code principles and industry standards.',
+            'Designed and managed end-to-end DevOps environments.',
+            'Built scalable CI/CD pipelines with GitHub Actions for automated builds, testing and deployments.',
+            'Deployed and optimized Docker containers to ensure high availability and fault tolerance in production.',
+            'Developed and documented product features following clean code principles and industry standards.',
             'Designed and implemented LAN/WAN/VLAN network infrastructure for enterprise environments.',
-            'Set up a load balancer (HAProxy) for PostgreSQL.',
-            'Set up and managed secure network environments using an OPNsense firewall and oversaw data center infrastructure spanning multiple servers.'
+            'Configured HAProxy load balancing for PostgreSQL high availability.',
+            'Secured network environments with OPNsense firewalls and oversaw data center server infrastructure.',
+            'Deployed Odoo on Docker with a secure CI/CD pipeline for automated releases.'
         ]
     }
 ];
 
 const projects = [
     {
-        title: 'Ledger SaaS',
-        description: 'Set up a secure and highly available system by collaborating with developers, backed by a secure and highly available database.',
+        title: 'Ledger Technology: E-invoicing SaaS',
+        description: 'Designed a secure, highly available e-invoicing system in collaboration with developers, backed by a secure, highly available database.',
         features: [
-            'Set up monitoring and alerting to catch system failures early.',
-            "Set up web probing for MOR's EIRS API and the system's APIs to track liveness, health, response time, and response code."
+            'Set up monitoring and alerting for fast detection of system failures.',
+            "Configured web probes for MOR's EIRS API and internal APIs to track liveness, health, response time and status codes."
         ],
         icon: 'server',
         tags: ['Grafana', 'Prometheus', 'Blackbox', 'High Availability', 'Monitoring'],
@@ -140,13 +136,13 @@ const projects = [
     },
     {
         title: 'Splunk Sunset: Enterprise Observability Migration',
-        description: 'Migrated logging and metrics infrastructure from Splunk Enterprise to a Grafana-based observability stack across 52 Kubernetes clusters, using VictoriaLogs and VictoriaMetrics for scale.',
+        description: 'Migrated observability from Splunk Enterprise to a scalable Grafana stack built on OpenTelemetry, VictoriaLogs, VictoriaMetrics and Grafana Tempo for unified logs, metrics and traces.',
         features: [
-            'Designed distributed tracing with Grafana Tempo and OpenTelemetry for end-to-end visibility across Kubernetes workloads.',
-            'Automated multi-cluster delivery with Flux CD and secured the Harbor registry with vulnerability scanning and RBAC.'
+            'Managed OpenTelemetry Collector infrastructure across multiple Kubernetes clusters with centralized routing, filtering and enrichment.',
+            'Delivered GitOps workflows with GitLab CI and Argo CD, and administered Harbor and Vault for secure images and secrets.'
         ],
         icon: 'activity',
-        tags: ['VictoriaMetrics', 'VictoriaLogs', 'Grafana Tempo', 'OpenTelemetry', 'Kubernetes', 'Flux CD', 'Harbor'],
+        tags: ['VictoriaMetrics', 'VictoriaLogs', 'Grafana Tempo', 'OpenTelemetry', 'Kubernetes', 'Argo CD', 'Harbor', 'Vault'],
         github: '#',
         external: '#'
     },
@@ -177,9 +173,9 @@ const projects = [
     },
     {
         title: 'Odoo Server Setup and Deployment',
-        description: 'Architected and deployed scalable CI/CD pipelines using GitHub Actions for automated builds, testing, and deployments. Configured and optimized Docker containers to ensure high availability and fault tolerance.',
+        description: 'Built scalable CI/CD pipelines using GitHub Actions for automated builds, testing and deployments. Configured and optimized Docker containers to ensure high availability and fault tolerance.',
         features: [
-            'Collaborated with development teams to enhance delivery efficiency and maintain robust quality standards.',
+            'Collaborated with development teams to improve delivery efficiency and maintain high quality standards.',
             'Developed and documented product features, adhering to clean code principles and industry standards.'
         ],
         icon: 'layers',
@@ -238,27 +234,6 @@ const certifications = [
         ]
     },
     {
-        group: 'Cisco Networking Academy',
-        icon: 'shield',
-        items: [
-            {
-                title: 'Cyber Threat Management',
-                issuer: 'Cisco Networking Academy',
-                file: 'assets/certs/cisco-cyber-threat-management.pdf'
-            },
-            {
-                title: 'Endpoint Security',
-                issuer: 'Cisco Networking Academy',
-                file: 'assets/certs/cisco-endpoint-security.pdf'
-            },
-            {
-                title: 'Operating Systems Basics',
-                issuer: 'Cisco Networking Academy',
-                file: 'assets/certs/cisco-operating-systems-basics.pdf'
-            }
-        ]
-    },
-    {
         group: 'Containerization',
         icon: 'box',
         items: [
@@ -270,9 +245,18 @@ const certifications = [
                 file: 'assets/certs/lf-kubernetes-cloud-native-essentials-lfs250.pdf'
             },
             {
-                title: 'Introduction to Kubernetes (LFS158)',
-                issuer: 'The Linux Foundation',
-                file: 'assets/certs/lf-intro-to-kubernetes-lfs158.pdf'
+                title: 'Advanced Application Management with Red Hat OpenShift',
+                issuer: 'Red Hat via Coursera',
+                date: 'Nov 2026',
+                verify: 'https://coursera.org/verify/D2KJ40MGTCG1',
+                file: 'assets/certs/redhat-advanced-openshift-application-management.pdf'
+            },
+            {
+                title: 'Managing Cloud-native Applications with Kubernetes',
+                issuer: 'Red Hat via Coursera',
+                date: 'Nov 2026',
+                verify: 'https://coursera.org/verify/75TMODC5NF6F',
+                file: 'assets/certs/redhat-managing-cloud-native-apps-kubernetes.pdf'
             },
             {
                 title: 'Docker Images & Containers',
@@ -293,12 +277,6 @@ const certifications = [
                 date: 'Mar 2026',
                 verify: 'https://freecodecamp.org/certification/fcce6efb154-2f0a-4ac2-b32d-86b58858f2f5/python-v9',
                 file: 'assets/certs/freecodecamp-python-developer.pdf'
-            },
-            {
-                title: 'The Database Development Life Cycle',
-                issuer: 'OpenLearn (The Open University)',
-                date: 'Feb 2026',
-                file: 'assets/certs/openlearn-database-development-lifecycle.pdf'
             },
             {
                 title: 'Programming Fundamentals',
@@ -560,7 +538,7 @@ function initTerminalTyping() {
     const el = document.getElementById('ssh-snippet');
     if (!el) return;
 
-    const phrases = ['DevOps Engineer', 'Web-Hosting Engineer', 'Network System Operations', 'Cloud Engineer', 'Site Reliability Engineer'];
+    const phrases = ['DevOps Engineer', 'Infrastructure Engineer', 'Network System Operations', 'Cloud Engineer', 'Site Reliability Engineer'];
     let pIndex = 0;
     let charIndex = 0;
     let typing = true;
