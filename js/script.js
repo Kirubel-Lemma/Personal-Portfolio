@@ -154,32 +154,21 @@ const projects = [
         external: '#'
     },
     {
-        title: 'Splunk Sunset: Enterprise Observability Migration',
-        description: 'Migrated observability from Splunk Enterprise to a scalable Grafana stack built on OpenTelemetry, VictoriaLogs, VictoriaMetrics and Grafana Tempo for unified logs, metrics and traces.',
+        title: 'Safaricom: Splunk Sunset',
+        description: 'Migrated observability from Splunk Enterprise to a scalable Grafana stack built on OpenTelemetry, VictoriaLogs, VictoriaMetrics and Grafana Tempo for unified logs, metrics and traces, and moved GitOps delivery from Flux CD to Argo CD.',
         features: [
             'Managed OpenTelemetry Collector infrastructure across multiple Kubernetes clusters with centralized routing, filtering and enrichment.',
-            'Delivered GitOps workflows with GitLab CI and Argo CD, and administered Harbor and Vault for secure images and secrets.'
+            'Verified each component against the live Flux artifact by digest before cutover to Argo CD, catching configuration drift early.',
+            'Built a GitLab CI pipeline publishing OCI artifacts to Harbor for Argo CD to sync, with secrets kept in Vault.',
+            'Scaled delivery to 51 leaf clusters through a single ApplicationSet using least-privilege ServiceAccounts.'
         ],
         icon: 'activity',
-        tags: ['VictoriaMetrics', 'VictoriaLogs', 'Grafana Tempo', 'OpenTelemetry', 'Kubernetes', 'Argo CD', 'Harbor', 'Vault'],
+        tags: ['VictoriaMetrics', 'VictoriaLogs', 'Grafana Tempo', 'OpenTelemetry', 'Kubernetes', 'Argo CD', 'Flux CD', 'GitLab CI', 'Harbor', 'Vault'],
         github: '#',
         external: '#'
     },
     {
-        title: 'Observability Platform Migration: Flux to ArgoCD (GitOps)',
-        description: 'Migrated the production observability stack on a two-data-center Kubernetes environment from Flux CD to ArgoCD, with Git-driven delivery and ordered rollouts.',
-        features: [
-            'Verified each component against the live Flux artifact by digest before cutover, catching configuration drift early.',
-            'Built a GitLab CI pipeline publishing OCI artifacts to Harbor for ArgoCD to sync, with secrets kept in Vault.',
-            'Scaled to 51 leaf clusters through a single ApplicationSet using least-privilege ServiceAccounts.'
-        ],
-        icon: 'git-merge',
-        tags: ['ArgoCD', 'Flux CD', 'ApplicationSet', 'Helm', 'GitLab CI', 'Harbor', 'Vault', 'Grafana', 'VictoriaMetrics', 'VictoriaLogs', 'Tempo', 'OpenTelemetry', 'Kubernetes'],
-        github: '#',
-        external: '#'
-    },
-    {
-        title: 'Secure Banking API Integration via IPSec VPN',
+        title: 'Kispay: Secure Banking API Integration',
         description: 'Designed and implemented secure IPSec VPN tunnels to enable encrypted API communication with financial institutions. Configured firewall policies, NAT rules, and routing to ensure secure and stable connectivity.',
         features: [
             'Performed connectivity testing, packet analysis, and troubleshooting to maintain high availability.',
@@ -191,7 +180,7 @@ const projects = [
         external: '#'
     },
     {
-        title: 'Odoo Server Setup and Deployment',
+        title: 'Hagbes: Odoo Server Setup and Deployment',
         description: 'Built scalable CI/CD pipelines using GitHub Actions for automated builds, testing and deployments. Configured and optimized Docker containers to ensure high availability and fault tolerance.',
         features: [
             'Collaborated with development teams to improve delivery efficiency and maintain high quality standards.',
@@ -203,7 +192,7 @@ const projects = [
         external: '#'
     },
     {
-        title: 'Network, CCTV, and VoIP Service Installation',
+        title: 'Hagbes: Network, CCTV, and VoIP Service Installation',
         description: 'Designed and implemented LAN/WAN/VLAN network infrastructure for enterprise environments. Configured routers, switches, and firewalls to ensure secure and reliable connectivity.',
         features: [
             'Installed and managed VoIP systems, including IP phones, SIP trunks, and call routing.',
