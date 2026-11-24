@@ -15,7 +15,7 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
     <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css?v=20261119b">
+    <link rel="stylesheet" href="css/style.css?v=20261124">
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
@@ -261,12 +261,23 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
+            <div class="visitor-stats" aria-label="Site visitor statistics">
+                <span class="visitor-stat">
+                    <i data-lucide="eye"></i>
+                    Total Views: <strong id="vercount_value_site_pv">...</strong>
+                </span>
+                <span class="visitor-stat">
+                    <i data-lucide="users"></i>
+                    Unique Visitors: <strong id="vercount_value_site_uv">...</strong>
+                </span>
+            </div>
             <p>&copy; 2026 Kirubel Lemma. All rights reserved.</p>
         </div>
     </footer>
 
     <!-- Scripts -->
-    <script src="js/script.js?v=20261119b"></script>
+    <script defer src="https://events.vercount.one/js"></script>
+    <script src="js/script.js?v=20261124"></script>
     <script>
         // Initialize Lucide icons
         lucide.createIcons();
