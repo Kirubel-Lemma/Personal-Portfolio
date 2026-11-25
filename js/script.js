@@ -329,6 +329,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initCardTilt();
     // initContactForm(); // Form removed
     initTerminalTyping();
+    initVisitorCounter();
 });
 
 /* Rendering Functions */
@@ -612,4 +613,69 @@ function initTerminalTyping() {
     }
 
     tick();
+}
+
+
+/* Visitor counter (Vercount API: https://events.vercount.one) */
+function initVisitorCounter() {
+    const viewsEl = document.getElementById('vercount_value_site_pv');
+    const visitorsEl = document.getElementById('vercount_value_site_uv');
+    if (!viewsEl && !visitorsEl) return;
+
+    const CACHE_KEY = 'visitorCountData';
+    const UV_KEY = 'vercount_uv_seen';
+    const API_URL = 'https://events.vercount.one/api/v2/log';
+    const format = n => Number(n || 0).toLocaleString('en-US');
+
+    const render = data => {
+        if (viewsEl) viewsEl.textContent = format(data.site_pv);
+        if (visitorsEl) visitorsEl.textContent = format(data.site_uv);
+    };
+
+    const safeStorage = {
+        get(key) { try { return localStorage.getItem(key); } catch (e) { return null; } },
+        set(key, value) { try { localStorage.setItem(key, value); } catch (e) { /* storage blocked */ } }
+    };
+
+    // Show the last known numbers immediately while the request runs
+    try {
+        const cached = JSON.parse(safeStorage.get(CACHE_KEY));
+        if (cached) render(cached);
+    } catch (e) { /* ignore bad cache */ }
+
+    // Count each page once, ignoring query string and #hash
+    const pageUrl = window.location.origin + window.location.pathname;
+    const isNewVisitor = safeStorage.get(UV_KEY) !== '1';
+
+    async function logVisit(attempt) {
+        const controller = new AbortController();
+        const timer = setTimeout(() => controller.abort(), 15000);
+        try {
+            const res = await fetch(API_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ url: pageUrl, isNewUv: isNewVisitor }),
+                signal: controller.signal
+            });
+            if (!res.ok) throw new Error('HTTP ' + res.status);
+            const json = await res.json();
+            const data = json && json.data ? json.data : json;
+            if (!data || data.site_pv === undefined) throw new Error('Unexpected response');
+            const counts = { site_pv: data.site_pv, site_uv: data.site_uv };
+            render(counts);
+            safeStorage.set(CACHE_KEY, JSON.stringify(counts));
+            safeStorage.set(UV_KEY, '1');
+        } catch (err) {
+            if (attempt < 2) {
+                setTimeout(() => logVisit(attempt + 1), 3000);
+            } else {
+                if (viewsEl && viewsEl.textContent === '...') viewsEl.textContent = 'N/A';
+                if (visitorsEl && visitorsEl.textContent === '...') visitorsEl.textContent = 'N/A';
+            }
+        } finally {
+            clearTimeout(timer);
+        }
+    }
+
+    logVisit(0);
 }
